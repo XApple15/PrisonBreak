@@ -1,4 +1,5 @@
 #Greenfoot project file
+<<<<<<< HEAD
 class.HowToPlay.image=bricks3.jpg
 class.Level1.image=board.jpg
 class.Level2.image=board.jpg
@@ -9,6 +10,33 @@ editor.fx.0.x=360
 editor.fx.0.y=28
 height=838
 package.numDependencies=0
+=======
+class.MainMenu.image=bluerock.jpg
+dependency1.from=MainMenu
+dependency1.to=Picture
+dependency1.type=UsesDependency
+dependency2.from=MainMenu
+dependency2.to=Play
+dependency2.type=UsesDependency
+dependency3.from=MainMenu
+dependency3.to=Instructions
+dependency3.type=UsesDependency
+dependency4.from=MainMenu
+dependency4.to=Exit
+dependency4.type=UsesDependency
+dependency5.from=Play
+dependency5.to=Level1
+dependency5.type=UsesDependency
+dependency6.from=Instructions
+dependency6.to=HowToPlay
+dependency6.type=UsesDependency
+editor.fx.0.height=702
+editor.fx.0.width=845
+editor.fx.0.x=605
+editor.fx.0.y=287
+height=1176
+package.numDependencies=6
+>>>>>>> 4539d66d62443416ee1162737eff143ac78f5d64
 package.numTargets=9
 project.charset=UTF-8
 publish.hasSource=false
@@ -53,14 +81,22 @@ target4.width=80
 target4.x=0
 target4.y=0
 target5.height=50
+<<<<<<< HEAD
 target5.name=Level1
+=======
+target5.name=Instructions
+>>>>>>> 4539d66d62443416ee1162737eff143ac78f5d64
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=80
 target5.x=0
 target5.y=0
 target6.height=50
+<<<<<<< HEAD
 target6.name=HowToPlay1
+=======
+target6.name=Level1
+>>>>>>> 4539d66d62443416ee1162737eff143ac78f5d64
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=90
@@ -88,7 +124,11 @@ target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
+<<<<<<< HEAD
 width=1550
+=======
+width=1616
+>>>>>>> 4539d66d62443416ee1162737eff143ac78f5d64
 world.lastInstantiated=MainMenu
 xPosition=0
 yPosition=0

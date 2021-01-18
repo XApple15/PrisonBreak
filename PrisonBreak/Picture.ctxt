@@ -1,7 +1,12 @@
 #BlueJ class context
 comment0.target=Picture
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Picture\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+<<<<<<< HEAD
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Picture\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+=======
+comment1.params=myImage
+comment1.target=Picture(greenfoot.GreenfootImage)
+>>>>>>> 4539d66d62443416ee1162737eff143ac78f5d64
 numComments=2
