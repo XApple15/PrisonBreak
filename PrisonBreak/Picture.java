@@ -20,4 +20,8 @@ public class Picture extends Actor
     {
         setImage(myImage);
     }
+    public void Patt( GreenfootImage myImage)
+    {
+        setImage(myImage);
+    }
 }

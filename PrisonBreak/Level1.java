@@ -4,9 +4,10 @@ public class Level1 extends World
 {
     public Level1()
     {    
-        super(1200, 600, 1); 
+        super(1000, 600, 1); 
         act();
         prepare();
+        
     }
 
     /**
@@ -19,5 +20,9 @@ public class Level1 extends World
         addObject(player1,272,239);
         Player2 player2 = new Player2();
         addObject(player2,869,204);
-    }
+        addObject(new Pat(),500,100);
+        
+    } 
+    
+    
 }

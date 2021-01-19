@@ -6,4 +6,6 @@ comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Picture\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=myImage
 comment2.target=Picture(greenfoot.GreenfootImage)
-numComments=3
+comment3.params=myImage
+comment3.target=void\ Patt(greenfoot.GreenfootImage)
+numComments=4
