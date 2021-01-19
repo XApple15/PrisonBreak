@@ -1,26 +1,20 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-/**
- * Write a description of class Play here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Play extends Buttons
 {
-    // Rescalling the .png file
-    
     public Play()
     {
-        GreenfootImage playButton= new GreenfootImage("playButton.png");
-        GreenfootImage image = new GreenfootImage(playButton);
-        image.scale(200, 100); // scaling the original image
-        setImage(image);
+        GreenfootImage playButton = new GreenfootImage(100,60);
+        Font adjustedFont = new Font(true, false, 50);
+        playButton.setFont(adjustedFont);
+        playButton.setColor(Color.WHITE);
+        playButton.drawString("Play", 0, 50);
+        setImage(playButton);
     }
-    // Calling the constructor act which checks if the mouse is over the box
     public void act() 
     {
-       checkMouse();
-       checkClick(new Level1());
-    }    
+        checkMouse(); 
+        checkClick(new Level1()); 
+        startingMusic();
+    } 
 }

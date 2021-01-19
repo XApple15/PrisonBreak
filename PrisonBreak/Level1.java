@@ -1,21 +1,23 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-/**
- * Write a description of class Level1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Level1 extends World
 {
-    muzica_mainmenu.stop();
-    /**
-     * Constructor for objects of class Level1.
-     * 
-     */
     public Level1()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1200, 800, 1); 
+        super(1200, 600, 1); 
+        act();
+        prepare();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Player1 player1 = new Player1();
+        addObject(player1,272,239);
+        Player2 player2 = new Player2();
+        addObject(player2,869,204);
     }
 }
