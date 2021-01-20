@@ -11,8 +11,8 @@ public class Settings extends Actor
   {
       if(Greenfoot.mouseClicked(this))
       {
-          GreenfootImage myImage = getImage();
-          myImage.scale(100, 50);  
+          getWorld().addObject(new SettingMenu(), 300,200);
+          getWorld().addObject(new X(), 350, 400);
       }
   }
 }

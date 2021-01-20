@@ -4,7 +4,7 @@ public class Level1 extends World
 {
     public Level1()
     {    
-        super(1200, 600, 1); 
+        super(1000, 600, 1); 
         act();
         prepare();
     }
