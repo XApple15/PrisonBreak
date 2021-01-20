@@ -20,6 +20,4 @@ public class MainMenu extends World
         addObject(instructions,getWidth()/2,401);
         addObject(exit,575,531);
     }
-
-
 }

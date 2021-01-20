@@ -8,16 +8,15 @@ public class Level1 extends World
         act();
         prepare();
     }
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+    
     private void prepare()
     {
         Player1 player1 = new Player1();
         addObject(player1,272,239);
         Player2 player2 = new Player2();
         addObject(player2,869,204);
+        Settings settings = new Settings();
+        addObject(settings,83,529);
+        settings.setLocation(61,552);
     }
 }

@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Objects
+comment1.params=x\ y
+comment1.target=void\ changeSize(int,\ int)
+numComments=2
