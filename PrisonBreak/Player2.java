@@ -2,7 +2,10 @@ import greenfoot.*;
 
 public class Player2 extends Prisoners
 {
-    public void act() 
+  public Player2()
+    {
+    }
+  public void act() 
     {
         if(Greenfoot.isKeyDown("up"))
         {

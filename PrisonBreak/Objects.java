@@ -9,5 +9,4 @@ public class Objects extends Actor
         int myNewWidth = (int)myImage.getWidth()/y;
         myImage.scale(myNewWidth, myNewHeight);
     }
-    
 }
