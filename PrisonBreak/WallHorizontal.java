@@ -4,6 +4,10 @@ public class WallHorizontal extends Objects
 {
     public WallHorizontal() 
     {
-        changeSize(4,2);
+        GreenfootImage WallHorizontal = new GreenfootImage("Wall.png");
+        setImage(WallHorizontal);
+        changeSize(1.5 , 1.5);
+        ImageSet();
     }    
+    
 }

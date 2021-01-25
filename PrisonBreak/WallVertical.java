@@ -4,7 +4,10 @@ public class WallVertical extends Objects
 {
     public WallVertical() 
     {
-        changeSize(4,2);
-        turn(90);
+        GreenfootImage WallVertical = new GreenfootImage("Wall_cell.png");
+        setImage(WallVertical);
+        changeSize(1.5 ,1.5);
+        ImageSet();
+ 
     }    
 }

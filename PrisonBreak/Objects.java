@@ -2,11 +2,16 @@ import greenfoot.*;
 
 public class Objects extends Actor
 {
-        public void changeSize(int x,int y)
+    public void changeSize(double x, double y)
     {
         GreenfootImage myImage = getImage();
-        int myNewHeight = (int)myImage.getHeight()/x;
-        int myNewWidth = (int)myImage.getWidth()/y;
-        myImage.scale(myNewWidth, myNewHeight);
+        double newX = (int)myImage.getHeight()/x;
+        double newY = (int)myImage.getWidth()/y;
+        myImage.scale(( int) newY, (int) newX);
+    }
+    public void ImageSet()
+    {
+        GreenfootImage myImage = getImage();
+        setImage(myImage);
     }
 }
