@@ -2,22 +2,13 @@ import greenfoot.*;
 
 public class Level1 extends World
 {
+    boolean IsNextToJob=false;
     public Level1()
     {    
         super(1000, 600, 1); 
-        
-        prepare();
-        
+        prepare(); 
     }
-    public void act()
-    {
-        int x= player1.getX()- door2.getX();
-        int y=player1.getY()-door2.getY();
-        if( x<=20 && x>=-20 && y<=20 && y>=-20)
-        {
-            Job1 Job11=new Job1();
-            addObject( Job11, 100,100);}
-    }
+    
     
     private void prepare()
     {
@@ -27,7 +18,7 @@ public class Level1 extends World
         Walls();
         
         Player1 player1 = new Player1();
-        addObject(player1,403,226);
+        addObject(player1,200,226);
         Player2 player2 = new Player2();
         addObject(player2,869,204);
         
@@ -42,6 +33,7 @@ public class Level1 extends World
        
         Door door2 = new Door();
         addObject(door2,412,226);
+        
         
         
     }
@@ -93,8 +85,7 @@ public class Level1 extends World
         CellDoorWall cellDoorWall9 = new CellDoorWall();
         addObject(cellDoorWall9,600,226);
     }
+   
     
-    }
-    
- 
+}
 

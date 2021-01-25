@@ -20,6 +20,7 @@ public class Player1 extends Prisoners
         {
             setLocation(getX()+3, getY());
         }
+        if(
     } 
     
     
