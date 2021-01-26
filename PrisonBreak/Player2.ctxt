@@ -1,7 +1,5 @@
 #BlueJ class context
 comment0.target=Player2
 comment1.params=
-comment1.target=Player2()
-comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment1.target=void\ act()
+numComments=2

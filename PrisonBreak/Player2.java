@@ -1,11 +1,8 @@
-import greenfoot.*;
+import greenfoot.*;  
 
-public class Player2 extends Prisoners
+public class Player2 extends Players
 {
-  public Player2()
-    {
-    }
-  public void act() 
+    public void act() 
     {
         if(Greenfoot.isKeyDown("up"))
         {
@@ -23,5 +20,8 @@ public class Player2 extends Prisoners
         {
             setLocation(getX()+3, getY());
         }
-    }    
+        
+    } 
+    
+    
 }
