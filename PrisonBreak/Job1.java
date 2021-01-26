@@ -18,8 +18,8 @@ public class Job1 extends Jobs
     }    
     private void description()
     {
-         GreenfootImage Job_1= new GreenfootImage("Wall.png");
-         Job_1.scale(200,500);
+         GreenfootImage Job_1= new GreenfootImage("bmw.jpg");
+         Job_1.scale( Job_1.getWidth(),Job_1.getHeight());
          setImage(Job_1);     
          
     }

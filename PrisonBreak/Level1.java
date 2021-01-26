@@ -34,9 +34,13 @@ public class Level1 extends World
         Door door2 = new Door();
         addObject(door2,412,226);
         
+        Bars bar1 = new Bars();
+        addObject(bar1, 500,500);
+        
         
         
     }
+    
 
     private void Walls()
     {

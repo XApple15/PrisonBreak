@@ -9,4 +9,5 @@ public class Door extends Objects
         changeSize(1.5, 1.3);
         ImageSet();
     }    
+    
 }

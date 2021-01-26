@@ -1,3 +1,4 @@
+
 import greenfoot.*; 
 
 public class Players extends Actor
@@ -10,5 +11,6 @@ public class Players extends Actor
             return 3;
         }
         return 0;
+        
     }
 }
