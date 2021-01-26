@@ -3,14 +3,11 @@ import greenfoot.*;
 
 public class Players extends Actor
 {   
-    public int checkObstacle()
+    public boolean hitObject()
     {
-        Actor Objects = getOneIntersectingObject(WallHorizontal.class);
-        if(Objects != null)
-        {
-            return 3;
-        }
-        return 0;
-        
+        if(isTouching(WallHorizontal.class))
+        return true;
+        else
+        return false;
     }
 }

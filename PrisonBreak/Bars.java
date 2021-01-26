@@ -8,7 +8,6 @@ public class Bars extends Objects
     private Player1 Player1;
     public void act()
     {
-        VerifEnchanced();
     }
 
     public Bars() 
