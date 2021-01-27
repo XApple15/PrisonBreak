@@ -5,7 +5,7 @@ public class Players extends Actor
 {   
     public boolean hitObject()
     {
-        if(isTouching(WallHorizontal.class))
+        if(isTouching(Objects.class))
         return true;
         else
         return false;

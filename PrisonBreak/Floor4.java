@@ -1,6 +1,6 @@
 import greenfoot.*; 
 
-public class Floor4 extends Objects
+public class Floor4 extends NoCollision
 {
     public Floor4() 
     {

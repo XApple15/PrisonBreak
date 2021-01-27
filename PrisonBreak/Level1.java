@@ -5,7 +5,7 @@ public class Level1 extends World
     boolean IsNextToJob=false;
     public Level1()
     {    
-        super(1000, 600, 1); 
+        super(1200, 700, 1); 
         prepare(); 
     }
     
@@ -20,7 +20,7 @@ public class Level1 extends World
         Player1 player1 = new Player1();
         addObject(player1,200,226);
         Player2 player2 = new Player2();
-        addObject(player2,869,204);
+        addObject(player2,600,150);
         
         Settings settings = new Settings();
         addObject(settings,83,529);

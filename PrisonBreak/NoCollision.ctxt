@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=NoCollision
+comment1.params=x\ y
+comment1.target=void\ changeSize(double,\ double)
+comment2.params=
+comment2.target=void\ ImageSet()
+numComments=3

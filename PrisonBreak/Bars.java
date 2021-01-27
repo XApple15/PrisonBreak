@@ -6,8 +6,10 @@ public class Bars extends Objects
 {
     Job1 Job11;
     private Player1 Player1;
+    private boolean ishere= false;
     public void act()
     {
+        VerifEnchanced();
     }
 
     public Bars() 
@@ -27,23 +29,13 @@ public class Bars extends Objects
         }
     }
     public void VerifEnchanced()
-    {
-        List <Player1> Player2 = getObjectsInRange(100 , Player1.class);
-        if(Player2.size() != 0)
         {
-            Jobs Job11= new Jobs();
-            getWorld().addObject( Job11, 199,100);
-        }
-        if(Player2.size() == 0)
-        {
-            Jobs job = (Jobs)getWorld().getObjects(Job1.class).get(1);
-            if( job != null ) 
-                {
-                    World world;
-                    world = getWorld();
-                    world.removeObject(job);
-                }
-            
-        }
+            List <Player1> Player2 = getObjectsInRange(100 , Player1.class);
+            if(Player2.size() != 0 && ishere == false)
+            {
+                Job1 Job11= new Job1();
+                getWorld().addObject( Job11, 199,100);
+                ishere= true;
+            }
     }
 }
