@@ -14,31 +14,34 @@ public class Level1 extends World
     {
         Floor16 floor16 = new Floor16();
         addObject(floor16,500,300);
-        
+
         Walls();
-        
+
         Player1 player1 = new Player1();
         addObject(player1,200,226);
         Player2 player2 = new Player2();
         addObject(player2,600,150);
-        
+
         Settings settings = new Settings();
         addObject(settings,83,529);
         settings.setLocation(61,552);
-        
-        
-        
+
         Door door1 = new Door();
         addObject(door1,838,226);
-       
+
         Door door2 = new Door();
         addObject(door2,412,226);
-        
+
         Bars bar1 = new Bars();
         addObject(bar1, 500,500);
-        
-        
-        
+
+        floor16.setLocation(40,53);
+        Office office = new Office();
+        addObject(office,40,53);
+        floor16.setLocation(46,201);
+        floor16.setLocation(382,87);
+        Desk desk = new Desk();
+        addObject(desk,382,87);
     }
     
 

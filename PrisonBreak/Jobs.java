@@ -1,19 +1,10 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 
-/**
- * Write a description of class Jobs here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Jobs extends Actor
 {
-    /**
-     * Act - do whatever the Jobs wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int securityCode = Greenfoot.getRandomNumber(9999);
+    String s =String.valueOf(securityCode);
     public void act() 
     {
-        // Add your action code here.
     }    
 }
