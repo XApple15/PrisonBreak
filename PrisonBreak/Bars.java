@@ -14,7 +14,7 @@ public class Bars extends Objects
 
     public Bars() 
     {
-        GreenfootImage Bars = new GreenfootImage("Bars.png"); // Pat
+        GreenfootImage Bars = new GreenfootImage("Bars_v2.png"); // Pat
         setImage(Bars);
         changeSize(1.5 , 1.5);
         ImageSet();
@@ -30,12 +30,16 @@ public class Bars extends Objects
     }
     public void VerifEnchanced()
         {
-            List <Player1> Player2 = getObjectsInRange(100 , Player1.class);
+            List <Player1> Player2 = getObjectsInRange(40 , Player1.class);
             if(Player2.size() != 0 && ishere == false)
             {
                 Job1 Job11= new Job1();
-                getWorld().addObject( Job11, 199,100);
+                getWorld().addObject( Job11, 400,200);
                 ishere= true;
+            }
+            if(Player2.size() ==0 && ishere == true)
+            {
+                ishere= false;
             }
     }
 }

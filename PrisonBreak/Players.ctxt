@@ -2,4 +2,8 @@
 comment0.target=Players
 comment1.params=
 comment1.target=boolean\ hitObject()
-numComments=2
+comment2.params=x\ y
+comment2.target=void\ changeSize(double,\ double)
+comment3.params=
+comment3.target=void\ ImageSet()
+numComments=4

@@ -4,6 +4,7 @@ public class Player2 extends Players
 {
     public void act() 
     {
+        desc();
         if(Greenfoot.isKeyDown("up"))
         {
             setLocation(getX(), getY()-3);
@@ -37,6 +38,15 @@ public class Player2 extends Players
             }
         }
     }
+     private void desc()
+    {
+        GreenfootImage Player2= new GreenfootImage("ppl2.png");
+        setImage(Player2);
+        changeSize(1.5,1.5);
+        ImageSet();
+        
+    }
 
     }     
+
 
