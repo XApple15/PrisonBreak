@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=void\ Verif()
 comment4.params=
 comment4.target=void\ VerifEnchanced()
-numComments=5
+comment5.params=
+comment5.target=void\ CloseHack()
+numComments=6

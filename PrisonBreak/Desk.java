@@ -17,6 +17,7 @@ public class Desk extends Objects
     public void act()
     {
         VerifEnchanced();
+        CloseHack();
     }
     public void Verif()
     {
@@ -29,13 +30,21 @@ public class Desk extends Objects
     public void VerifEnchanced()
         {
             List <Player1> Player2 = getObjectsInRange(100 , Player1.class);
-            if(Player2.size() != 0 && ishere == false)
+            if(Player2.size() != 0 && ishere == false && Greenfoot.isKeyDown("c"))
             {
                 StartButton Hack1= new StartButton();
                 Hack Hack12 = new Hack();
-                getWorld().addObject( Hack1, 199,100);
-                getWorld().addObject( Hack12, 300,500);
+                getWorld().addObject( Hack12, 500,275);
+                getWorld().addObject( Hack1, 625,300);
                 ishere= true;
             }
+    }
+    public void CloseHack()
+    {
+        List <Player1> Player2 = getObjectsInRange(100 , Player1.class);
+        if(Player2.size() != 0 && Greenfoot.isKeyDown("e"))
+        {
+            getWorld().removeObjects(getWorld().getObjects(Hack.class));
+        }
     }
 }

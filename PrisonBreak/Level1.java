@@ -113,7 +113,8 @@ public class Level1 extends World
         Bars Bars1 = new Bars();
         addObject(Bars1, 1097,73);
 
-        
+        Desk Desk1 = new Desk();
+        addObject(Desk1, 315, 525);
     }
     
 
@@ -178,8 +179,8 @@ public class Level1 extends World
         
         CellDoorWall cellDoorWall9 = new CellDoorWall();
         addObject(cellDoorWall9,600,226);
+        
     }
    
     
 }
-

@@ -7,7 +7,7 @@ public class Hack extends Jobs
     private boolean code = false;
     public Hack()
     {
-        setImage("SettingMenu.png");
+        setImage("HackWallpaper.png");
     }
     public void act() 
     {
@@ -18,7 +18,7 @@ public class Hack extends Jobs
             {
                 if(code == false)
                 {
-                    getWorld().addObject(new displayCode(), 500, 400);
+                    getWorld().addObject(new displayCode(), 655, 345);
                     code = true;
                 }
             }
@@ -26,11 +26,15 @@ public class Hack extends Jobs
     }
     public boolean code()
     {
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(null))
         {
+            Actor mouseActor = Greenfoot.getMouseInfo().getActor();
+            if(mouseActor instanceof StartButton)
+            {
             click = true;
+            getWorld().addObject(new LoadingBar(), 625, 350);
             getWorld().removeObjects(getWorld().getObjects(StartButton.class));            
-            getWorld().addObject(new LoadingBar(), 500, 800);
+            }
         }
         return click;
     }
