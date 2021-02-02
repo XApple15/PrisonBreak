@@ -1,0 +1,16 @@
+Player 1(orange):
+
+String GoToVenttxt = " Go to the vent in your cell !" ;
+String HoldCtxt = "Hold C to cut the vents !";
+String 
+
+
+
+Player 2(verde):
+
+String HoldCtxt = "Hold C to cut the vents !";
+String WaitToLeave = "Start cutting when the room is empty !";
+String GrabWalkieTalkie = " Grab the walkie-talkie from the table!";
+String PressLtospeak = " Press L to get the Police Officer out of his office !";
+String GoBackToVents = " Get back in the vents and go to your EX-cellmate !";
+String GetInTheRoom = " Press .... to get inside !";

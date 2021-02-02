@@ -8,63 +8,65 @@ import java.util.List;
  */
 public class Job1 extends Jobs
 {
-    int NumberOfCutsMade = 0;
     boolean FinishedCutting = false;
-    private int LastCut = 1;
-    long LastTime = System.currentTimeMillis();
-    long CurrentTime;
+    long LastTime, CurrentTime;
+    private int i, j, bar_number;
+    private int CutDelay = 50;
+    int Player = 1;// este actionat de player 1
+    
     public void act() 
     {
-        description();
-        List <Job1> IsJob1Here = getWorld().getObjects(Job1.class);
-        if ( IsJob1Here != null ) 
-        {
-            Cutting();
-        }
-        if ( FinishedCutting == true ) 
-        {
-            DeleteVent();
-        }
+        
+        if( Greenfoot.isKeyDown("c")) 
+          {  
+              Cutting();
+          }
+
     }    
-    private void description()
+
+    public  void Cutting() 
     {
-         GreenfootImage Job_1= new GreenfootImage("bmw.jpg");
-         setImage(Job_1);       
-    }
-    public  void Cutting() // incepe taierea
-    {
-        if(Greenfoot.isKeyDown("c"))
+        for ( bar_number = 1 ; bar_number <=4 ; bar_number++ ) // ia pe rand cele 4 bari
         {
-            for(int i= LastCut;i<=20;i++)
-               { 
-                 setImage("cut"+i+".png");
-                 NumberOfCutsMade++;
-                 if(NumberOfCutsMade == 20)
-                   { 
-                       FinishedCutting=true;
-                   }    
-                 if ( Greenfoot.isKeyDown("c") == false )
-                    {
-                        return; // iese din FOR daca nu mai este apasata tasta "C"
-                    }
-                 CurrentTime = System.currentTimeMillis(); // Delay pentru desfasurarea imaginilor 
-                 if ( LastTime + 500 >= CurrentTime ) 
-                    {
-                    LastTime = System.currentTimeMillis();
-                    }
-               } 
-        }
-        else
+            for( i=1 ; i<=10;i++) 
             {
-                
+                setImage("cuts/cut" + bar_number + "_"  + i + ".png" );
+                if( Greenfoot.isKeyDown("c") == false ) // termina daca nu mai apasa pe C
+                { getWorld().removeObject(this); return;}
+                LastTime = System.currentTimeMillis();
+                while ( LastTime + CutDelay >= System.currentTimeMillis() ) {} // delay dintre afisarea imag
+                getWorld().repaint();
             }
-        if( Greenfoot.isKeyDown("x"))
-        {
-            getWorld().removeObject(this);  // sterge Job1 daca este apasata tasta ESC
+            for(i=9 ; i>=1 ;i-- ) 
+            {
+                setImage("cuts/cut" + bar_number + "_"  + i + ".png" );
+                if( Greenfoot.isKeyDown("c") == false )
+                {  getWorld().removeObject(this); return;}
+                LastTime = System.currentTimeMillis();
+                while ( LastTime + CutDelay >= System.currentTimeMillis() ) {}
+                getWorld().repaint();
+            }
+
         }
+        setImage("cuts/cut_final.png"); // arata imag cu barile taiate
+        getWorld().repaint();
+        
+        goToNextPoint();   
     }
-    public void DeleteVent()
+
+    private void goToNextPoint() // teleporteaza player1 si 2 in ventroom
     {
+        getWorld().removeObjects( getWorld().getObjects(Bars.class));
+        getWorld().removeObjects( getWorld().getObjects(Players.class));
+        getWorld().addObject( new Player1(), 1150,90);
+        getWorld().addObject( new Player2(), 1150, 100);
         getWorld().removeObject(this);
     }
+
+
+    private void DisplayText()   
+    {
+       
+    }
+
 }
