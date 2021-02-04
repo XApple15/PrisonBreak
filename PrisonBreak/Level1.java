@@ -14,7 +14,9 @@ public class Level1 extends World
     {
         Background_lvl1 Background = new Background_lvl1();
         addObject(Background,600,350);
-
+        
+        Walls();
+        
         Settings settings = new Settings();
         addObject(settings,83,529);
         settings.setLocation(61,552);
@@ -22,10 +24,20 @@ public class Level1 extends World
       
 
         Player1 player1 = new Player1();
-        addObject(player1,1000,100);
+        addObject(player1,1001,100);
         Player2 player2 = new Player2();
-        addObject(player2,700,150);
+        addObject(player2,1001,149);
 
+        
+        Vent1 Vent11 = new Vent1();
+        addObject(Vent11, 1097,73);
+
+        
+    }
+    
+
+    private void Walls()
+    {
         wall11 wall11 = new wall11();
         addObject(wall11,21,105);
         
@@ -110,74 +122,6 @@ public class Level1 extends World
         wall54 wall54 = new wall54();
         addObject(wall54,7,640);
         
-        Bars Bars1 = new Bars();
-        addObject(Bars1, 1097,73);
-
-        
-    }
-    
-
-    private void Walls()
-    {
-        Door door1 = new Door();
-        addObject(door1,838,226);
-
-        Door door2 = new Door();
-        addObject(door2,412,226);
-
-        Bars bar1 = new Bars();
-        addObject(bar1, 500,500);
-
-        
-        Office office = new Office();
-        addObject(office,40,53);
-        
-        Desk desk = new Desk();
-        addObject(desk,382,87);
-        WallVertical wallVertical = new WallVertical();
-        addObject(wallVertical,733,274);
-        
-        WallVertical wallVertical2 = new WallVertical();
-        addObject(wallVertical2,733,415);
-        
-        WallVertical wallVertical3 = new WallVertical();
-        addObject(wallVertical3,307,415);
-       
-        WallVertical wallVertical4 = new WallVertical();
-        addObject(wallVertical4,307,274);
-        
-        WallHorizontal wallHorizontal = new WallHorizontal();
-        addObject(wallHorizontal,718,506);
-       
-        WallHorizontal wallHorizontal2 = new WallHorizontal();
-        addObject(wallHorizontal2,152,506);
-        
-        CellDoorWall cellDoorWall = new CellDoorWall();
-        addObject(cellDoorWall,965,226);
-       
-        CellDoorWall cellDoorWall2 = new CellDoorWall();
-        addObject(cellDoorWall2,899,226);
-        
-        CellDoorWall cellDoorWall3 = new CellDoorWall();
-        addObject(cellDoorWall3,777,226);
-        
-        CellDoorWall cellDoorWall4 = new CellDoorWall();
-        addObject(cellDoorWall4,351,226);
-       
-        CellDoorWall cellDoorWall5 = new CellDoorWall();
-        addObject(cellDoorWall5,539,226);
-        
-        CellDoorWall cellDoorWall6 = new CellDoorWall();
-        addObject(cellDoorWall6,473,226);
-        
-        CellDoorWall cellDoorWall7 = new CellDoorWall();
-        addObject(cellDoorWall7,688,226);
-        
-        CellDoorWall cellDoorWall8 = new CellDoorWall();
-        addObject(cellDoorWall8,629,226);
-        
-        CellDoorWall cellDoorWall9 = new CellDoorWall();
-        addObject(cellDoorWall9,600,226);
     }
    
     

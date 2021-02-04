@@ -40,7 +40,7 @@ public class Player1 extends Players
     } 
     private void desc()
     {
-        GreenfootImage Player1= new GreenfootImage("ppl3.png");
+        GreenfootImage Player1= new GreenfootImage("Players/ppl3.png");
         setImage(Player1);
         changeSize( 1.5 , 1.5 );
         ImageSet();

@@ -8,7 +8,7 @@ public class Desk extends Objects
     {
         GreenfootImage Desk = new GreenfootImage("Desk.png");
         setImage(Desk);
-        changeSize(2,2);
+        changeSize( 1.5 , 1.5);
         ImageSet();
     }   
     StartButton Hack1;

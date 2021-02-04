@@ -19,6 +19,7 @@ public class Job1 extends Jobs
         
         if( Greenfoot.isKeyDown("c")) 
           {  
+              
               Cutting();
           }
 
@@ -56,10 +57,14 @@ public class Job1 extends Jobs
 
     private void goToNextPoint() // teleporteaza player1 si 2 in ventroom
     {
-        getWorld().removeObjects( getWorld().getObjects(Bars.class));
+        getWorld().removeObjects( getWorld().getObjects(Vent1.class));
         getWorld().removeObjects( getWorld().getObjects(Players.class));
+        getWorld().removeObjects( getWorld().getObjects(Vents.class));
+        getWorld().addObject( new Vent2(), 595,612);
+        getWorld().addObject( new Vent3(), 400,400);
         getWorld().addObject( new Player1(), 1150,90);
-        getWorld().addObject( new Player2(), 1150, 100);
+        getWorld().addObject( new Player2(), 1150, 135);
+        getWorld().addObject( new WalkieTalkie(), 612, 499);
         getWorld().removeObject(this);
     }
 

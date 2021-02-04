@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=HintAlert
+comment1.params=text
+comment1.target=HintAlert(java.lang.String)
+comment2.params=text
+comment2.target=void\ setText(java.lang.String)
+numComments=3
