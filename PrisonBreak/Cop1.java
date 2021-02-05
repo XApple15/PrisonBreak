@@ -1,19 +1,34 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class Cop1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  
 public class Cop1 extends NPC
 {
-    /**
-     * Act - do whatever the Cop1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    private int movingCounter = 0;
+    public void act() {
+        MovingCycle();
+    }
+    
+    public void MovingCycle()
     {
-        // Add your action code here.
-    }    
+        if (movingCounter < 400) {
+            setLocation(getX() , getY() - 1);
+        }
+        else if (movingCounter < 550) {
+            setLocation(getX(), getY() + 1);
+        }
+        else if(movingCounter < 1100)  {
+            setLocation(getX() - 1, getY());
+        }
+        else if(movingCounter < 1650)  {
+            setLocation(getX() + 1, getY());
+        }
+        else if(movingCounter < 1800)  {
+            setLocation(getX(), getY() - 1);
+        }
+        else if(movingCounter < 2200)  {
+            setLocation(getX(), getY() +1);
+        }
+        else {
+            movingCounter = 0;
+        }
+        movingCounter++;
+    }
 }

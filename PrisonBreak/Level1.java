@@ -22,9 +22,17 @@ public class Level1 extends World
       
 
         Player1 player1 = new Player1();
-        addObject(player1,1000,100);
+        addObject(player1,100,200);
         Player2 player2 = new Player2();
         addObject(player2,700,150);
+        
+        Cop1 cop1 = new Cop1();
+        addObject(cop1, 620, 500);
+        Cop2 cop2 = new Cop2();
+        addObject(cop2, 70, 500);
+        
+        KeyPad KeyPad1 = new KeyPad();
+        addObject(KeyPad1, 25, 185);
 
         
     }

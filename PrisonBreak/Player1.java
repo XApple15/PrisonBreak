@@ -4,7 +4,7 @@ public class Player1 extends Players
 {
     public void act() 
     {
-        desc();
+      desc();
         if(Greenfoot.isKeyDown("w"))
         {
             setLocation(getX(), getY()-3);
