@@ -16,4 +16,8 @@ public class VentNormal extends Vents
     {
         // Add your action code here.
     }    
+    public VentNormal()
+    {
+        setImage( "Vents/Vent_1.png");
+    }
 }

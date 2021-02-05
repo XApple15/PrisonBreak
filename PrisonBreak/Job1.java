@@ -12,66 +12,62 @@ public class Job1 extends Jobs
     long LastTime, CurrentTime;
     private int i, j, bar_number;
     private int CutDelay = 50;
-    int Player = 1;// este actionat de player 1
-    
+    long lastCutTime = 01;
+    int currentCut = 0;
+    boolean finishedCutting = false;
+    public static final long CUT_TIME_DIF = 100;
+    public static final int MAX_CUT = 10;
+    int BAR_NO = 1 ;
+    boolean Bar_Reverse = false ;
     public void act() 
     {
-        
-        if( Greenfoot.isKeyDown("c")) 
-          {  
-              
-              Cutting();
-          }
-
+            Cutting();
     }    
 
     public  void Cutting() 
     {
-        for ( bar_number = 1 ; bar_number <=4 ; bar_number++ ) // ia pe rand cele 4 bari
+        if ( Greenfoot.isKeyDown("c")  == false || finishedCutting ) 
         {
-            for( i=1 ; i<=10;i++) 
-            {
-                setImage("cuts/cut" + bar_number + "_"  + i + ".png" );
-                if( Greenfoot.isKeyDown("c") == false ) // termina daca nu mai apasa pe C
-                { getWorld().removeObject(this); return;}
-                LastTime = System.currentTimeMillis();
-                while ( LastTime + CutDelay >= System.currentTimeMillis() ) {} // delay dintre afisarea imag
-                getWorld().repaint();
-            }
-            for(i=9 ; i>=1 ;i-- ) 
-            {
-                setImage("cuts/cut" + bar_number + "_"  + i + ".png" );
-                if( Greenfoot.isKeyDown("c") == false )
-                {  getWorld().removeObject(this); return;}
-                LastTime = System.currentTimeMillis();
-                while ( LastTime + CutDelay >= System.currentTimeMillis() ) {}
-                getWorld().repaint();
-            }
-
+            lastCutTime = 01;
+            getWorld().removeObject(this);
+            return;
         }
-        setImage("cuts/cut_final.png"); // arata imag cu barile taiate
-        getWorld().repaint();
-        
-        goToNextPoint();   
+        if( System.currentTimeMillis() > lastCutTime + CUT_TIME_DIF)
+        {
+            lastCutTime = System.currentTimeMillis();
+            if( Bar_Reverse == true ) currentCut--;
+            else currentCut ++;
+            setImage( "cuts/cut" + BAR_NO + "_" + currentCut + ".png");
+            if(currentCut == MAX_CUT && BAR_NO == 4 ) finishCutting();
+            if(currentCut == MAX_CUT) 
+            {
+                Bar_Reverse = true;
+            }
+            if( currentCut == 1 && Bar_Reverse == true) 
+            {
+                Bar_Reverse = false;
+                BAR_NO++;
+            }
+        }
+    }
+    
+    private void finishCutting()
+    {
+        finishedCutting = true;
+        goToNextPoint();
     }
 
     private void goToNextPoint() // teleporteaza player1 si 2 in ventroom
     {
         getWorld().removeObjects( getWorld().getObjects(Vent1.class));
         getWorld().removeObjects( getWorld().getObjects(Players.class));
-        getWorld().removeObjects( getWorld().getObjects(Vents.class));
+        getWorld().removeObjects( getWorld().getObjects(VentNormal.class));
         getWorld().addObject( new Vent2(), 595,612);
-        getWorld().addObject( new Vent3(), 400,400);
+        getWorld().addObject( new Vent3(), 135,578);
         getWorld().addObject( new Player1(), 1150,90);
         getWorld().addObject( new Player2(), 1150, 135);
         getWorld().addObject( new WalkieTalkie(), 612, 499);
         getWorld().removeObject(this);
-    }
-
-
-    private void DisplayText()   
-    {
-       
     }
 
 }

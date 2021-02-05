@@ -22,17 +22,38 @@ public class Level1 extends World
       
 
         Player1 player1 = new Player1();
-        addObject(player1,100,200);
+        addObject(player1,1000,100);
         Player2 player2 = new Player2();
-        addObject(player2,700,150);
+        addObject(player2,974,151);
+        
+        Vent1 Vent11 = new Vent1();
+        addObject(Vent11, 1097,73);
+        
+        VentNormal VentN2 = new VentNormal();
+        addObject(VentN2, 595,612);
+        
+        VentNormal VentN3 = new VentNormal();
+        addObject( VentN3 , 135,578);
+        
+        
+        addObject( new CellDoor() ,874 , 126);
+        addObject( new CellDoor() ,874 ,289 );
+        addObject( new CellDoor() ,874 ,459 );
+        
+
+        Desk Desk1 = new Desk();
+        addObject(Desk1, 315, 525);
+        
+        DeskStatic Desk20 = new DeskStatic();
+        addObject( Desk20, 619,529);
         
         Cop1 cop1 = new Cop1();
-        addObject(cop1, 620, 500);
+        addObject( cop1, 620, 500);
         Cop2 cop2 = new Cop2();
-        addObject(cop2, 70, 500);
+        addObject( cop2, 70,500);
         
-        KeyPad KeyPad1 = new KeyPad();
-        addObject(KeyPad1, 25, 185);
+        KeyPad KeyPad1= new KeyPad();
+        addObject( KeyPad1, 25, 185);
 
         
     }
@@ -122,16 +143,6 @@ public class Level1 extends World
         addObject(wall53,1152,2);
         
         wall54 wall54 = new wall54();
-        addObject(wall54,7,640);
-        
-        Vent1 Vent11 = new Vent1();
-        addObject(Vent11, 1097,73);
-
-        Desk Desk1 = new Desk();
-        addObject(Desk1, 315, 525);
-        
-        
-    }
-   
-    
+        addObject(wall54,7,640);    
+    }   
 }

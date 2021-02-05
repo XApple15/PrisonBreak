@@ -2,16 +2,16 @@ import greenfoot.*;
 import java.util.List;
 
 
-public class Bars extends Objects
+public class CellDoor extends Objects
 { 
     public void act()
     {
         
     }
     
-    public Bars() 
+    public CellDoor() 
     {
-        GreenfootImage Bars = new GreenfootImage("Bars_v2.png"); // Pat
+        GreenfootImage Bars = new GreenfootImage("Cell_door.png"); // Pat
         setImage(Bars);
         changeSize(1.5 , 1.5);
         ImageSet();
