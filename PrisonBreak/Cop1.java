@@ -15,6 +15,12 @@ public class Cop1 extends NPC
         MovingCycle();
     }
 
+    public Cop1()
+    {
+        setImage("Cops/Cop1/Cop1_back.png");
+        changeSize(1.5 , 1.5);
+    }
+
     public void MovingCycle()
     {
         if(n==true)
@@ -28,21 +34,33 @@ public class Cop1 extends NPC
 
             if (movingCounter < 400) {
                 setLocation(getX() , getY() - 1);
+                setImage( "Cops/Cop1/Cop1_back.png");
+                changeSize(1.5 , 1.5);
             }
             else if (movingCounter < 550) {
                 setLocation(getX(), getY() + 1);
+                setImage( "Cops/Cop1/Cop1_front.png");
+                changeSize(1.5 , 1.5);
             }
             else if(movingCounter < 1100)  {
                 setLocation(getX() - 1, getY());
+                setImage( "Cops/Cop1/Cop1_left.png");
+                changeSize(1.5 , 1.5);
             }
             else if(movingCounter < 1650)  {
                 setLocation(getX() + 1, getY());
+                setImage( "Cops/Cop1/Cop1_right.png");
+                changeSize(1.5 , 1.5);
             }
             else if(movingCounter < 1800)  {
                 setLocation(getX(), getY() - 1);
+                setImage( "Cops/Cop1/Cop1_back.png");
+                changeSize(1.5 , 1.5);
             }
             else if(movingCounter < 2200)  {
                 setLocation(getX(), getY() +1);
+                setImage( "Cops/Cop1/Cop1_front.png");
+                changeSize( 1.5 , 1.5 );
             }
             else {
                 movingCounter = 0;
@@ -54,7 +72,7 @@ public class Cop1 extends NPC
 
     public void PlayerNearby()
     {
-        if(timer<1 && isSet == false)
+        if(timer < 1 && isSet == false)
         {
             timer = Greenfoot.getRandomNumber(45000);
             return;
@@ -67,8 +85,9 @@ public class Cop1 extends NPC
         }
         if(lastTime == false)
         {
-        LastTime = System.currentTimeMillis();
-        lastTime = true;
+            LastTime = System.currentTimeMillis();
+            lastTime = true;
         }
     }
+
 }

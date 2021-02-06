@@ -8,5 +8,6 @@ public class Bed extends Objects
         setImage(Bed);
         changeSize(2,2);
         ImageSet();
+        turn(180);
     }    
 }

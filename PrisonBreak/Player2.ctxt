@@ -3,5 +3,5 @@ comment0.target=Player2
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ desc()
+comment2.target=Player2()
 numComments=3

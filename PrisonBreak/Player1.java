@@ -4,7 +4,7 @@ public class Player1 extends Players
 {
     public void act() 
     {
-      desc();
+      
         if(Greenfoot.isKeyDown("w"))
         {
             setLocation(getX(), getY()-3);
@@ -12,6 +12,8 @@ public class Player1 extends Players
             {
                 setLocation(getX(), getY()+3);
             }
+            setImage( "Players/Player1/Pl_1_back.png");
+            
         }
         if(Greenfoot.isKeyDown("a"))
         {
@@ -20,6 +22,8 @@ public class Player1 extends Players
             {
             setLocation(getX()+3, getY());
             }
+            setImage( "Players/Player1/Pl_1_left.png");
+            
         }
         if(Greenfoot.isKeyDown("s"))
         {
@@ -28,6 +32,8 @@ public class Player1 extends Players
             {
                 setLocation(getX(), getY()-3);
             }
+            setImage( "Players/Player1/Pl_1_front.png");
+            
         }
         if(Greenfoot.isKeyDown("d"))
         {
@@ -36,14 +42,13 @@ public class Player1 extends Players
             {
             setLocation(getX() - 3, getY());
             }
+            setImage( "Players/Player1/Pl_1_right.png");
+            
         }
     } 
-    private void desc()
+    public Player1()
     {
-        GreenfootImage Player1= new GreenfootImage("Players/ppl3.png");
-        setImage(Player1);
-        changeSize( 1.5 , 1.5 );
-        ImageSet();
+        setImage("Players/Player1/Pl_1_left.png");
         
     }
 

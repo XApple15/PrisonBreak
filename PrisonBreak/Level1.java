@@ -17,21 +17,13 @@ public class Level1 extends World
         addObject(settings,83,529);
         settings.setLocation(61,552);
 
-      
-
-        Player1 player1 = new Player1();
-        addObject(player1,1000,100);
-        Player2 player2 = new Player2();
-        addObject(player2,974,151);
+        addObject(new Player1(),913,133);
+        addObject(new Player2(),1005,133);
         
-        Vent1 Vent11 = new Vent1();
-        addObject(Vent11, 1097,73);
-        
-        VentNormal VentN2 = new VentNormal();
-        addObject(VentN2, 595,612);
-        
-        VentNormal VentN3 = new VentNormal();
-        addObject( VentN3 , 135,578);
+       
+        addObject(new Vent1(), 1097,73);
+        addObject(new VentNormal(), 595,612);
+        addObject( new VentNormal() , 135,578);
         
         
         addObject( new CellDoor() ,874 , 126);
@@ -39,11 +31,9 @@ public class Level1 extends World
         addObject( new CellDoor() ,874 ,459 );
         
 
-        Desk Desk1 = new Desk();
-        addObject(Desk1, 315, 525);
         
-        DeskStatic Desk20 = new DeskStatic();
-        addObject( Desk20, 619,529);
+        addObject(new Desk(), 177, 455);
+        addObject( new DeskStatic(), 619,508);
         
         Cop1 cop1 = new Cop1();
         addObject( cop1, 620, 500);
@@ -53,13 +43,24 @@ public class Level1 extends World
         KeyPad KeyPad1= new KeyPad();
         addObject( KeyPad1, 25, 185);
         
-        Bed Bed1 = new Bed();
-        addObject( Bed1, 800, 100);
         
-        CellDoor celldoor1 = new CellDoor();
-        addObject(celldoor1, 10, 220);
-        CellDoor celldoor2 = new CellDoor();
-        addObject(celldoor2, 10, 255);
+        addObject( new Bed(), 910, 75);
+        addObject( new Bed(), 1005, 75);
+        addObject( new Bed(), 910, 253);
+        addObject( new Bed(), 910, 417);
+        
+        addObject(new BigDoor(), 11, 235);
+        
+        
+        addObject( new DoorCop1() , 621,401);
+        addObject( new DoorCop2() , 264,333);
+        
+        addObject( new Chairs(), 121, 454);
+        addObject( new Chairs(), 572, 504);
+        
+        addObject( new Bath() ,1077 ,175);
+        addObject( new Bath() ,1077 ,348) ;
+        addObject( new Bath() ,1077 , 550);
 
         
     }

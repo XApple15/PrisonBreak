@@ -16,4 +16,11 @@ public class NPC extends Actor
     {
         // Add your action code here.
     }    
+    public void changeSize(double x, double y)
+    {
+        GreenfootImage myImage = getImage();
+        double newX = (int)myImage.getHeight()/x;
+        double newY = (int)myImage.getWidth()/y;
+        myImage.scale(( int) newY, (int) newX);
+    }
 }
