@@ -12,8 +12,6 @@ public class Level1 extends World
     
     private void prepare()
     {
-        Background_lvl1 Background = new Background_lvl1();
-        addObject(Background,600,350);
         Walls();
         Settings settings = new Settings();
         addObject(settings,83,529);
@@ -57,6 +55,11 @@ public class Level1 extends World
         
         Bed Bed1 = new Bed();
         addObject( Bed1, 800, 100);
+        
+        CellDoor celldoor1 = new CellDoor();
+        addObject(celldoor1, 10, 220);
+        CellDoor celldoor2 = new CellDoor();
+        addObject(celldoor2, 10, 255);
 
         
     }

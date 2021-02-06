@@ -5,5 +5,5 @@ comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ MovingCycle()
 comment3.params=
-comment3.target=void\ PlayerClose()
+comment3.target=void\ PlayerNearby()
 numComments=4
