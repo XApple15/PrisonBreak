@@ -8,9 +8,11 @@ public class Vent2 extends Vents
     private boolean HoldCadded = false;
     private boolean isTurned = false;
     private boolean GoToVentadded = false ;
+    public boolean CopLeft = false;
     private long LastTime = 01;
     private int DelayEx = 200;
     private int i;
+    public int timer = 500;
     BiggerHint GoToVent = new BiggerHint(" ");
     Hint HoldC = new Hint(" ");
     HintAlert DontCutCop = new HintAlert(" ");
@@ -45,6 +47,7 @@ public class Vent2 extends Vents
 
         if( Player2.size() == 0 && GoToVentadded == false ) 
         {
+   
             if( GoToVentadded == false ) 
             {
                 GoToVentadded= true;

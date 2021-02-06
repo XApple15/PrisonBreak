@@ -5,5 +5,5 @@ comment1.target=KeyPass()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
-comment3.target=boolean\ code()
+comment3.target=void\ code()
 numComments=4

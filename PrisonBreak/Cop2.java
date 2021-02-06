@@ -5,6 +5,10 @@ public class Cop2 extends NPC
     public void act() 
     {
         MovingCycle();
+        if(getY()== 0)
+        {
+            getWorld().removeObjects(getWorld().getObjects(Cop2.class));
+        }
     }  
         public void MovingCycle()
     {
@@ -17,17 +21,8 @@ public class Cop2 extends NPC
         else if(movingCounter < 570)  {
             setLocation(getX() + 1, getY());
         }
-        else if(movingCounter < 700)  {
+        else if(movingCounter < 1500)  {
             setLocation(getX(), getY() - 1);
-        }
-        else if(movingCounter < 800)  {
-            setLocation(getX() + 1, getY());
-        }
-        else if(movingCounter < 1200) {
-            setLocation(getX() - 1, getY());
-        }
-        else if(movingCounter < 1500) {
-            setLocation(getX() + 1, getY());
         }
         else {
             movingCounter = 700;

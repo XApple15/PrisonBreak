@@ -54,6 +54,9 @@ public class Level1 extends World
         
         KeyPad KeyPad1= new KeyPad();
         addObject( KeyPad1, 25, 185);
+        
+        Bed Bed1 = new Bed();
+        addObject( Bed1, 800, 100);
 
         
     }
