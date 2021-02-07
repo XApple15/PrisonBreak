@@ -7,6 +7,7 @@ public class KeyPass extends Jobs
     public int p = 10;
     public int q = 10;
     public int code;
+    private boolean dooropen = false;
     public KeyPass()
     {
         setImage("KeyPass.png");
@@ -17,6 +18,13 @@ public class KeyPass extends Jobs
         if(code==securityCode)
         {
             getWorld().removeObjects(getWorld().getObjects(BigDoor.class));
+            if(dooropen == false)
+            {
+            CellDoor celldoor = new CellDoor();
+            getWorld().addObject(celldoor, 20, 280);
+            celldoor.setRotation(90);
+            dooropen = true;
+            }
         }
     }   
         public void code()

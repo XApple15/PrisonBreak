@@ -69,6 +69,14 @@ public class Level1 extends World
         addObject(new Office(), 119,360);
         addObject(new Office(), 150,360);
         addObject(new Office(), 181,360);
+        addObject(new Office(), 557, 48);
+        addObject(new Office(), 588, 48);
+        addObject(new Office(), 619, 48);
+        addObject(new Office(), 650, 48);
+        
+        
+        addObject(new Prisoner1(), 1000, 250);
+        addObject(new Prisoner2(), 1000, 450);
         
         addObject(new Timer() , 300,200);
         
