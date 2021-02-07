@@ -1,6 +1,5 @@
-
 import greenfoot.*; 
-
+import java.util.List;
 public class Players extends Actor
 {   
     public boolean hitObject()
@@ -21,6 +20,14 @@ public class Players extends Actor
     {
         GreenfootImage myImage = getImage();
         setImage(myImage);
+    }
+    public void LostGame()
+    {
+        List <NPC> NPC = getObjectsInRange(100 , NPC.class);
+        if(NPC.size() != 0)
+        {
+            Greenfoot.setWorld(new LoseScreen());
+        }
     }
 }
 

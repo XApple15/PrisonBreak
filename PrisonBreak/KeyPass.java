@@ -16,7 +16,7 @@ public class KeyPass extends Jobs
         code();
         if(code==securityCode)
         {
-            getWorld().removeObjects(getWorld().getObjects(Bed.class));
+            getWorld().removeObjects(getWorld().getObjects(BigDoor.class));
         }
     }   
         public void code()

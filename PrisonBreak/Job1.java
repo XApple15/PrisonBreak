@@ -66,7 +66,7 @@ public class Job1 extends Jobs
         getWorld().addObject( new Vent3(), 135,578);
         getWorld().addObject( new Player1(), 1150,90);
         getWorld().addObject( new Player2(), 1150, 135);
-        getWorld().addObject( new WalkieTalkie(), 612, 499);
+        getWorld().addObject( new WalkieTalkie(), 670, 532);
         getWorld().removeObject(this);
     }
 

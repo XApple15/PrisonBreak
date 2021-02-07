@@ -13,6 +13,7 @@ public class Cop1 extends NPC
     public void act() {
         PlayerNearby();
         MovingCycle();
+        OpenDoor1();
     }
 
     public Cop1()
@@ -89,5 +90,12 @@ public class Cop1 extends NPC
             lastTime = true;
         }
     }
-
+        public void OpenDoor1()
+    {
+        List <DoorCop1> doorcop1 = getObjectsInRange(40 , DoorCop1.class);
+        if(doorcop1.size() != 0)
+        {
+            getWorld().removeObjects(getWorld().getObjects(DoorCop1.class));
+        }
+    }
 }

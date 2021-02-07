@@ -7,6 +7,7 @@ public class Level1 extends World
     {    
         super(1200, 700, 1); 
         prepare(); 
+                
     }
     
     
@@ -16,10 +17,11 @@ public class Level1 extends World
         Settings settings = new Settings();
         addObject(settings,83,529);
         settings.setLocation(61,552);
-
-        addObject(new Player1(),913,133);
-        addObject(new Player2(),1005,133);
         
+        Player1 player1 = new Player1();
+        Player2 player2 = new Player2();
+        addObject( player1,913,133);
+        addObject(player2,1005,133);
        
         addObject(new Vent1(), 1097,73);
         addObject(new VentNormal(), 595,612);
@@ -33,7 +35,7 @@ public class Level1 extends World
 
         
         addObject(new Desk(), 177, 455);
-        addObject( new DeskStatic(), 619,508);
+        addObject( new DeskStatic(), 678,557);
         
         Cop1 cop1 = new Cop1();
         addObject( cop1, 620, 500);
@@ -56,12 +58,17 @@ public class Level1 extends World
         addObject( new DoorCop2() , 264,333);
         
         addObject( new Chairs(), 121, 454);
-        addObject( new Chairs(), 572, 504);
+        addObject( new Chairs(), 635, 565);
         
         addObject( new Bath() ,1077 ,175);
         addObject( new Bath() ,1077 ,348) ;
         addObject( new Bath() ,1077 , 550);
-
+        
+        addObject(new Office(), 57,360);
+        addObject(new Office(), 88,360);
+        addObject(new Office(), 119,360);
+        addObject(new Office(), 150,360);
+        addObject(new Office(), 181,360);
         
     }
     
@@ -152,4 +159,6 @@ public class Level1 extends World
         wall54 wall54 = new wall54();
         addObject(wall54,7,640);    
     }   
+
+
 }

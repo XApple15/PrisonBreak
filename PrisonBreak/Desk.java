@@ -3,14 +3,13 @@ import java.util.List;
 
 public class Desk extends Objects
 {
-    String GoToDesktxt = " Go to the Computer";
-    String PressCtoOpentxt = "Press C to turn on the Computer" ;
-    String ClickOnStarttxt = "Click on START button to start hacking the security system !";
-    String RememberAndClosetxt = "Remember the 4-digit code and press E to turn off the Computer";
+    private boolean pressC = false;
+    private boolean rememberandclose = false;
+    
+    String PressCtoOpentxt = "Press X to turn on the Computer and \nSTART hacking to find the 4-digit code!" ;
+    String RememberAndClosetxt = "Hack the security system and press E to \nturn off the Computer after you find the code";
 
-    Hint GoToDesk = new Hint(" ");
-    Hint PressCtoOpen = new Hint(" ");
-    BiggerHint ClockOnStart = new BiggerHint(" ");
+    BiggerHint PressCtoOpen = new BiggerHint(" ");
     BiggerHint RememberAndClose = new BiggerHint(" ");
     public Desk() 
     {
@@ -31,8 +30,8 @@ public class Desk extends Objects
     
     private void Hints()
     {
-        GoToDesk.setText( GoToDesktxt);
         PressCtoOpen.setText ( PressCtoOpentxt);
+        RememberAndClose.setText(RememberAndClosetxt);
     }
 
     public void VerifEnchanced()
@@ -42,23 +41,21 @@ public class Desk extends Objects
         if( VentNormal.size() == 0 && Vent3.size() == 0) 
         {
             List <Player1> Player2 = getObjectsInRange(100 , Player1.class);
-            if(Player2.size() == 0)
-            {
-                getWorld().addObject( GoToDesk, 100,100);
-            }
-            if(Player2.size() !=0 && Greenfoot.isKeyDown("c") == false ) 
+            if(Player2.size() !=0 && Greenfoot.isKeyDown("x") == false && pressC == false) 
             {
                 getWorld().addObject( PressCtoOpen , 200,100);
-                getWorld().removeObject( GoToDesk);
+                pressC = true;
             }
-            if(Player2.size() != 0 && ishere == false && Greenfoot.isKeyDown("c"))
+            if(Player2.size() != 0 && ishere == false && Greenfoot.isKeyDown("x") && rememberandclose == false)
             {
-                
+                getWorld().removeObject( PressCtoOpen);
+                getWorld().addObject( RememberAndClose , 200,100);
                 StartButton Hack1= new StartButton();
                 Hack Hack12 = new Hack();
                 getWorld().addObject( Hack12, 500,275);
                 getWorld().addObject( Hack1, 625,300);
                 ishere= true;
+                rememberandclose = true;
             }
         }
     }
@@ -69,6 +66,7 @@ public class Desk extends Objects
         if(Player2.size() != 0 && Greenfoot.isKeyDown("e"))
         {
             getWorld().removeObjects(getWorld().getObjects(Hack.class));
+            getWorld().removeObject( RememberAndClose);
         }
     }
 }

@@ -6,4 +6,6 @@ comment2.params=x\ y
 comment2.target=void\ changeSize(double,\ double)
 comment3.params=
 comment3.target=void\ ImageSet()
-numComments=4
+comment4.params=
+comment4.target=void\ LostGame()
+numComments=5

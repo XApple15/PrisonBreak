@@ -1,11 +1,6 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 import java.util.List;
-/**
- * Write a description of class WalkieTalkie here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class WalkieTalkie extends GuardiansRoom
 {
     private boolean GoToadded = false;
@@ -73,6 +68,8 @@ public class WalkieTalkie extends GuardiansRoom
 
                 if( Greenfoot.isKeyDown("1") == true )
                 {
+                    Cop2 cop2info = (Cop2)getWorld().getObjects(Cop2.class).get(0);
+                    cop2info.n = 1;
                     DONE = true;
                     getWorld().removeObject(PressToSpeak);
                     LastTime = System.currentTimeMillis();

@@ -4,7 +4,8 @@ public class Player1 extends Players
 {
     public void act() 
     {
-      
+        LostGame();
+        WinGame();
         if(Greenfoot.isKeyDown("w"))
         {
             setLocation(getX(), getY()-3);
@@ -50,6 +51,15 @@ public class Player1 extends Players
     {
         setImage("Players/Player1/Pl_1_left.png");
         
+    }
+    public void WinGame()
+    {
+        Actor player2 = (Actor)getWorld().getObjects(Player2.class).get(0); 
+        Actor player1 = (Actor)getWorld().getObjects(Player1.class).get(0);
+        if (player1.getX() == 0 && player2.getX() == 0)
+        {  
+            Greenfoot.setWorld(new WinScreen());
+        }
     }
 
 }

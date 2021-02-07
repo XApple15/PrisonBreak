@@ -5,6 +5,8 @@ public class Hack extends Jobs
     private int timer = 500;
     private boolean click = false;
     private boolean code = false;
+
+    
     public Hack()
     {
         setImage("HackWallpaper.png");
@@ -33,9 +35,10 @@ public class Hack extends Jobs
             {
             click = true;
             getWorld().addObject(new LoadingBar(), 625, 350);
-            getWorld().removeObjects(getWorld().getObjects(StartButton.class));            
+            getWorld().removeObjects(getWorld().getObjects(StartButton.class));  
             }
         }
         return click;
     }
+
 }

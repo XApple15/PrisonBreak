@@ -6,4 +6,6 @@ comment2.params=
 comment2.target=Cop2()
 comment3.params=
 comment3.target=void\ MovingCycle()
-numComments=4
+comment4.params=
+comment4.target=void\ OpenDoor2()
+numComments=5
