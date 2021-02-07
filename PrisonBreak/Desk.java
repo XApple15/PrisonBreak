@@ -8,7 +8,9 @@ public class Desk extends Objects
     
     String PressCtoOpentxt = "Press X to turn on the Computer and \nSTART hacking to find the 4-digit code!" ;
     String RememberAndClosetxt = "Hack the security system and press E to \nturn off the Computer after you find the code";
-
+    String ThenGoTotxt = "After that, exit the room\n and go to the building Exit";
+    
+    BiggerHint ThenGoTo = new BiggerHint(" ");
     BiggerHint PressCtoOpen = new BiggerHint(" ");
     BiggerHint RememberAndClose = new BiggerHint(" ");
     public Desk() 
@@ -32,6 +34,7 @@ public class Desk extends Objects
     {
         PressCtoOpen.setText ( PressCtoOpentxt);
         RememberAndClose.setText(RememberAndClosetxt);
+        ThenGoTo.setText(ThenGoTotxt);
     }
 
     public void VerifEnchanced()
@@ -41,15 +44,17 @@ public class Desk extends Objects
         if( VentNormal.size() == 0 && Vent3.size() == 0) 
         {
             List <Player1> Player2 = getObjectsInRange(100 , Player1.class);
-            if(Player2.size() !=0 && Greenfoot.isKeyDown("x") == false && pressC == false) 
+            if(Player2.size() !=0 && Greenfoot.isKeyDown("x") == false && pressC == false && ishere == false) 
             {
-                getWorld().addObject( PressCtoOpen , 200,100);
+                getWorld().addObject( PressCtoOpen , 181,653);
                 pressC = true;
             }
             if(Player2.size() != 0 && ishere == false && Greenfoot.isKeyDown("x") && rememberandclose == false)
             {
                 getWorld().removeObject( PressCtoOpen);
-                getWorld().addObject( RememberAndClose , 200,100);
+                pressC= true;
+                getWorld().addObject( RememberAndClose , 181,620);
+                getWorld().addObject( ThenGoTo , 181,670);
                 StartButton Hack1= new StartButton();
                 Hack Hack12 = new Hack();
                 getWorld().addObject( Hack12, 500,275);
@@ -63,10 +68,15 @@ public class Desk extends Objects
     public void CloseHack()
     {
         List <Player1> Player2 = getObjectsInRange(100 , Player1.class);
+   
+            
         if(Player2.size() != 0 && Greenfoot.isKeyDown("e"))
         {
             getWorld().removeObjects(getWorld().getObjects(Hack.class));
             getWorld().removeObject( RememberAndClose);
+            getWorld().removeObject( ThenGoTo);
+            rememberandclose = false;
+            ishere= false;
         }
     }
 }

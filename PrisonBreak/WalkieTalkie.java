@@ -68,6 +68,7 @@ public class WalkieTalkie extends GuardiansRoom
 
                 if( Greenfoot.isKeyDown("1") == true )
                 {
+                    Greenfoot.playSound("WalkieTalkie.mp3");
                     Cop2 cop2info = (Cop2)getWorld().getObjects(Cop2.class).get(0);
                     cop2info.n = 1;
                     DONE = true;

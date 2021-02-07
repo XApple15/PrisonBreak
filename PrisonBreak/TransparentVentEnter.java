@@ -12,12 +12,15 @@ public class TransparentVentEnter extends Vents
     private boolean PressToEnteradded = false;
     BiggerHint GoToVent = new BiggerHint(" ");   
     Hint PressToEnter = new Hint(" ");
+    Hint Follow = new Hint(" ");
+    String Followtxt = "Follow your EX-cellmate";
     String GoToVenttxt =  "Go to the next Vent cut \nby your Ex-cellmate ";
     String PressToEntertxt = "Press NUM0 to enter Ventroom";
     public void act() 
     {
         GoToVent.setText(GoToVenttxt);
         PressToEnter.setText(PressToEntertxt);
+        Follow.setText(Followtxt);
         CheckPlayer();
     }    
 
@@ -58,6 +61,7 @@ public class TransparentVentEnter extends Vents
                 getWorld().addObject( new Player2(), 137, 533);
                 getWorld().removeObject( GoToVent);
                 getWorld().removeObject(PressToEnter);
+                getWorld().addObject( Follow ,1019,682);
                 getWorld().removeObject(this);
             }
         }

@@ -21,6 +21,7 @@ public class Hack extends Jobs
                 if(code == false)
                 {
                     getWorld().addObject(new displayCode(), 655, 345);
+                    
                     code = true;
                 }
             }
