@@ -1,5 +1,13 @@
 #BlueJ class context
 comment0.target=WinScreen
 comment1.params=
-comment1.target=WinScreen()
-numComments=2
+comment1.target=void\ act()
+comment2.params=
+comment2.target=WinScreen()
+comment3.params=
+comment3.target=void\ ScoreAndMisc()
+comment4.params=filename
+comment4.target=java.util.List\ loadFile(java.lang.String)
+comment5.params=numStr
+comment5.target=int\ stringToInteger(java.lang.String)
+numComments=6

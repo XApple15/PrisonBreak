@@ -70,6 +70,8 @@ public class Level1 extends World
         addObject(new Office(), 150,360);
         addObject(new Office(), 181,360);
         
+        addObject(new Timer() , 300,200);
+        
     }
     
 
