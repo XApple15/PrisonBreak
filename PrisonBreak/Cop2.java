@@ -55,6 +55,7 @@ public class Cop2 extends NPC
         if(doorcop2.size() != 0)
         {
             getWorld().removeObjects(getWorld().getObjects(DoorCop2.class));
+            getWorld().addObject(new CellDoor(), 240, 323);
         }
     }
 }
