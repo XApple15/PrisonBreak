@@ -1,9 +1,9 @@
 import greenfoot.*; 
-public class Music25 extends SettingMenu
+public class Music80 extends SettingMenu
 {
-    public Music25()
+    public Music80()
     {
-        setImage("25.png");
+        setImage("80.png");
     }
     public void act() 
     {

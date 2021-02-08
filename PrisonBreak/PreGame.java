@@ -40,8 +40,8 @@ public class PreGame extends World
             
             removeObjects(getObjects(TextBox.class));
             TextBox Scenario1 = new TextBox(" ");
-            String Stringg = TB + scenario;
-            Scenario1.setTextt( (String) TB + scenario );
+            //String Stringg = TB + scenario;
+            //Scenario1.setTextt( (String) TB + scenario );
             addObject( Scenario1 , 300, 300);
         }
         if( Greenfoot.mouseClicked(NextButton) )
@@ -51,7 +51,7 @@ public class PreGame extends World
             
             removeObjects(getObjects(TextBox.class));
             TextBox Scenario2 = new TextBox(" ");
-            Scenario2.setTextt( (String) Dialog + scenario );
+            //Scenario2.setTextt( (String) Dialog + scenario );
             addObject( Scenario2 , 300, 300);
         }
         if( prev == scenario) return;
@@ -61,7 +61,7 @@ public class PreGame extends World
             {
                 removeObjects(getObjects(TextBox.class));
                 TextBox Scenario1 = new TextBox(" ");
-                Scenario1.setTextt( (String) Dialog + scenario );
+                //Scenario1.setTextt( (String) Dialog + scenario );
                 addObject( Scenario1 , 300, 300);
             }
             else if( Greenfoot.mouseClicked(NextButton))

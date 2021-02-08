@@ -1,8 +1,8 @@
 import greenfoot.*; 
 
-public class NoVolume extends SettingMenu
+public class Music0 extends SettingMenu
 {
-    public NoVolume()
+    public Music0()
     {
         setImage("0.png");
     }
