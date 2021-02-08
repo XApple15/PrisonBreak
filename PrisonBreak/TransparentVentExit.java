@@ -28,7 +28,7 @@ public class TransparentVentExit extends Vents
 
     private void CheckPlayer()
     {
-        List <Player2> Player2 = getObjectsInRange( 40, Player2.class);
+        List <Player2> Player2 = getObjectsInRange( 60, Player2.class);
         if( Player2.size() ==0  ) 
         {
             if( GoToVentadded == false)

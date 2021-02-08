@@ -22,5 +22,6 @@ public class Level2 extends World
         addObject( new BigDoor(), 219 ,348); 
         addObject( new KeyPad(), 233 , 298);
         
+        addObject( new Timer(), 300,300);
     }
 }

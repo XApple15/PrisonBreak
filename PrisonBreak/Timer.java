@@ -19,7 +19,8 @@ public class Timer extends Actor
     private boolean isFirstDeleted = false;
     String LastTimeFromFile ;
     int i =0 ;
-    
+    int z;
+
     BestTime Timerr = new BestTime(" ");
 
     public void act() 
@@ -36,32 +37,28 @@ public class Timer extends Actor
     private void SetTime()
     {
         if( System.currentTimeMillis() < StartTimeDelay + Delay ) return;
-        
-        loadFile( (String) filename);
-        
-        // aici a fost un if sa vad daca este in lumea 1 
         StartTimeDelay = System.currentTimeMillis();
+
         if( isFirstDeleted == true)  getWorld().removeObject(Timerr);
-        
-        
+
+        loadFile( (String) filename);
         currentTime = System.currentTimeMillis();
         durationSeconds = stringToInteger ( (String) LastTimeFromFile);
         durationSeconds = durationSeconds +1;
         if( durationSeconds / 60 <=9 )
             Timerr.setText( " Time elapsed : 0" + durationSeconds/60 + ":"+ durationSeconds%60);
-
         if( durationSeconds % 60 <= 9 )
             Timerr.setText( " Time elapsed : " + durationSeconds/60 + ":0"+ durationSeconds%60);
         if( durationSeconds / 60 <=9  && durationSeconds % 60 <=9 )
             Timerr.setText( " Time elapsed : " + "0"+ durationSeconds/60 + ":0" + durationSeconds%60);
-            
-        
+
         isFirstDeleted = true;
         getWorld().addObject( Timerr , 210 ,37);
-        //deleteFile( (String) filename);
+        // deleteFile( (String) filename);
+
         saveFile( (String) filename , true , durationSeconds+"");
     }
-    
+
     public boolean deleteFile(String filename) {
         BufferedWriter file = null;
         try {
@@ -120,9 +117,9 @@ public class Timer extends Actor
                 //npe.printStackTrace();
             }
         }
-        
-        LastTimeFromFile = fileText.get(i);
-        
+        z = fileText.size();
+        LastTimeFromFile = fileText.get(z-1);
+
         return fileText;
     }
 
@@ -158,10 +155,10 @@ public class Timer extends Actor
                 //npe.printStackTrace();
             }
         }
-        i++;
+        z++;
         return true;
     }
-    
+
     private int stringToInteger(String numStr)
     {
         int val = 0;

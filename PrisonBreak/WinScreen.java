@@ -12,38 +12,43 @@ import java.util.Arrays;
 public class WinScreen extends World
 {
     public int BestTimeinSec;
-
-    private String filename = "misc/BestTime.txt";
+    public int LastTimeinSec;
+    private String BestTimeFile = "misc/BestTime.txt";
+    private String LastTimeFile = "misc/Timer.txt";
     int mins = 45;
     int sec = 35;
 
     public void act()
     {
-
+            ScoreAndMisc();
     }
 
     public WinScreen()
     {    
         super(1200, 700, 1); 
-        addObject( new Timer(), 300,300);
+        ScoreAndMisc();
     }
 
     private void ScoreAndMisc()
     {
         BestTime CurrentFinalTime = new BestTime(" ");
         BestTime besttime = new BestTime(" ");
-        loadFile( (String) filename);
-        int CurrentTime = mins*60 + sec;
+        loadFileLastTime( (String) LastTimeFile);
+        loadFileBestTime ( (String) BestTimeFile);
+        
 
-        if( CurrentTime > BestTimeinSec )
+        if( LastTimeinSec > BestTimeinSec )
         {
-            CurrentFinalTime.setText ( " NEW BEST TIME :" + mins + ":" + sec);
+            CurrentFinalTime.setText ( " NEW BEST TIME :" + LastTimeinSec /60 + ":" + LastTimeinSec %60);
             besttime.setText( " Last Best Time : " + BestTimeinSec/60 + ":" + BestTimeinSec %60);
+            deleteFile( (String) BestTimeFile);
+            saveFile ( (String) BestTimeFile , true, LastTimeinSec+"");
         }
         else 
         {
-            CurrentFinalTime.setText ( " Current Time : " + mins + ":" + sec);
+            CurrentFinalTime.setText ( " Current Time : " + LastTimeinSec/60 + ":" + LastTimeinSec %60);
             besttime.setText( " Your Best Time : " + BestTimeinSec/60 + ":" + BestTimeinSec%60);
+            
         }
 
         addObject(CurrentFinalTime, 300, 200);
@@ -52,7 +57,42 @@ public class WinScreen extends World
     }
 
     
-    public java.util.List<String> loadFile(String filename) {
+    public java.util.List<String> loadFileLastTime(String filename) {
+        ArrayList<String> fileText = new ArrayList<String>();
+        BufferedReader file = null;
+        try {
+            file = new BufferedReader(new FileReader(filename));
+            String input;
+            while ((input = file.readLine()) != null) {
+                fileText.add(input);
+            }
+        }
+        catch (FileNotFoundException fnfe) {
+            //fnfe.printStackTrace();
+            return null;
+        }
+        catch (IOException ioe) {
+            //ioe.printStackTrace();
+            return null;
+        }
+        finally {
+            try {
+                file.close();
+            }
+            catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+            catch (NullPointerException npe) {
+                //npe.printStackTrace();
+            }
+        }
+        int z = fileText.size();
+        LastTimeinSec = stringToInteger( (String) fileText.get(z-1));
+
+        return fileText;
+    }
+    
+    public java.util.List<String> loadFileBestTime(String filename) {
         ArrayList<String> fileText = new ArrayList<String>();
         BufferedReader file = null;
         try {
@@ -84,6 +124,102 @@ public class WinScreen extends World
 
         BestTimeinSec = stringToInteger( (String) fileText.get(0));
 
+        return fileText;
+    }
+    
+    public boolean saveFile(String filename, boolean addToExistingFile, String ... fileText) {
+        List<String> existingText = loadFile(filename);
+        BufferedWriter file = null;
+        try {
+            file = new BufferedWriter(new FileWriter(filename));
+            if (addToExistingFile) {
+                for (String output : existingText) {
+                    file.write(output);
+                    file.write('\n');
+                }
+            }
+            for (String output : fileText) {
+                file.write(output);
+                file.write('\n');
+            }
+            file.close();
+        }
+        catch (IOException ioe) {
+            //ioe.printStackTrace();
+            return false;
+        }
+        finally {
+            try {
+                file.close();
+            }
+            catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+            catch (NullPointerException npe) {
+                //npe.printStackTrace();
+            }
+        }
+        return true;
+    }
+    
+    public boolean deleteFile(String filename) {
+        BufferedWriter file = null;
+        try {
+            file = new BufferedWriter(new FileWriter(filename));
+            file.write("");
+            file.close();
+        }
+        catch (FileNotFoundException fnfe) {
+            //fnfe.printStackTrace();
+            return true;
+        }
+        catch (IOException ioe) {
+            ioe.printStackTrace();
+            return false;
+        }
+        finally {
+            try {
+                file.close();
+            }
+            catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+            catch (NullPointerException npe) {
+                //npe.printStackTrace();
+            }
+        }
+        return true;
+    }
+    
+    public java.util.List<String> loadFile(String filename) {
+        ArrayList<String> fileText = new ArrayList<String>();
+        BufferedReader file = null;
+        try {
+            file = new BufferedReader(new FileReader(filename));
+            String input;
+            while ((input = file.readLine()) != null) {
+                fileText.add(input);
+            }
+        }
+        catch (FileNotFoundException fnfe) {
+            //fnfe.printStackTrace();
+            return null;
+        }
+        catch (IOException ioe) {
+            //ioe.printStackTrace();
+            return null;
+        }
+        finally {
+            try {
+                file.close();
+            }
+            catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+            catch (NullPointerException npe) {
+                //npe.printStackTrace();
+            }
+        }
         return fileText;
     }
 
