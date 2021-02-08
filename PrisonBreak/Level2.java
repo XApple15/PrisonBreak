@@ -2,6 +2,9 @@ import greenfoot.*;
 
 public class Level2 extends World
 {
+    long FirstTimeAdd = System.currentTimeMillis();
+    long DelayAddCop = 10000;
+    private boolean isAdded = false;
     public Level2()
     {    
         super(1200, 700, 1); 
@@ -23,5 +26,16 @@ public class Level2 extends World
         addObject( new KeyPad(), 233 , 298);
         
         addObject( new Timer(), 300,300);
+    }
+    
+    public void act()
+    {
+        if( System.currentTimeMillis() < FirstTimeAdd + DelayAddCop ) 
+            return;
+        if (isAdded == false ) 
+        {
+            addObject( new CopRunner() , 100,100);
+            isAdded = true;
+        }
     }
 }
