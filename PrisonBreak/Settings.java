@@ -11,11 +11,13 @@ public class Settings extends Actor
   {
       if(Greenfoot.mouseClicked(this))
       {
-          getWorld().addObject(new SettingMenu(), 300,200);
-          getWorld().addObject(new X(), 350, 400);
-          getWorld().addObject(new FullVolume(), 100, 300);
-          getWorld().addObject(new VolumeDown(), 150,350);
-          getWorld().addObject(new VolumeUp(), 50, 250);
+          getWorld().addObject(new SettingMenu(), 600,350);
+          getWorld().addObject(new Resume(), 600, 415);
+          getWorld().addObject(new Sound(), 600, 250);
+          getWorld().addObject(new GoToMainMenu(), 600, 475);
+          getWorld().addObject(new FullVolume(), 600, 350);
+          getWorld().addObject(new VolumeDown(), 450,350);
+          getWorld().addObject(new VolumeUp(), 750, 350);
       }
   }
 }

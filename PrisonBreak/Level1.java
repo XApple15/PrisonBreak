@@ -7,7 +7,6 @@ public class Level1 extends World
     {    
         super(1200, 700, 1); 
         prepare(); 
-                
     }
     
     
@@ -15,8 +14,7 @@ public class Level1 extends World
     {
         Walls();
         Settings settings = new Settings();
-        addObject(settings,83,529);
-        settings.setLocation(61,552);
+        addObject(settings,1150,25);
         
         Player1 player1 = new Player1();
         Player2 player2 = new Player2();

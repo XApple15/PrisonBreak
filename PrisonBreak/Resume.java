@@ -1,9 +1,9 @@
 import greenfoot.*; 
-public class X extends SettingMenu
+public class Resume extends SettingMenu
 {
-    public X()
+    public Resume()
     {
-        setImage("X.png");
+        setImage("Resume.png");
         changeSize(4,4);
     }
     public void act()
