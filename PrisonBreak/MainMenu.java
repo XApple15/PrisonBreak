@@ -15,9 +15,8 @@ public class MainMenu extends World
     private String filename = "misc/BestTime.txt";
     public MainMenu()
     {    
-        super(1000, 600, 1); 
+        super(1200, 700, 1); 
         prepare();
-        act();
     }
 
     private void prepare()
@@ -25,12 +24,13 @@ public class MainMenu extends World
         GreenfootImage logo = new GreenfootImage("Logo.png");
         Logo logoPic = new Logo(logo);
         addObject(logoPic,getWidth()/2,150);
-        Play play = new Play();
-        Exit exit = new Exit();
-        Instructions instructions = new Instructions();
-        addObject(play,getWidth()/2,288);
-        addObject(instructions,getWidth()/2,401);
-        addObject(exit,575,531);
+        
+       
+        addObject( new Play() , getWidth()/2 ,288 );
+        addObject( new Instructions() , getWidth()/2 , 401) ;
+        addObject( new Exit() , getWidth()/2 , 531 );
+        
+        
         loadFile( (String) filename);
     }
 
@@ -65,8 +65,16 @@ public class MainMenu extends World
         }
         BestTime besttime = new BestTime(" ");
         int x = stringToInteger( (String) fileText.get(0));
-        besttime.setText(x/60 + ":"+ x%60);
-        addObject(besttime, 200,100);
+        
+        besttime.setText("Best Time : " + x/60 + ":"+ x%60);
+        if( x/60 <= 9 )
+        {
+            if( x%60 <= 9 ) besttime.setText("Best Time : " + "0" + x/60 + ":" +"0"+ x%60 );
+            else besttime.setText("Best Time : " + "0" +  x/60 + ":"+ x%60);
+        }
+        else if( x % 60 <=9 ) besttime.setText("Best Time : " + x/60 + ":"+ "0" + x%60);
+        
+        addObject(besttime, 981, 623);
         return fileText;
     }
 

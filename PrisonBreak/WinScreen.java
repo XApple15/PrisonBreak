@@ -26,6 +26,7 @@ public class WinScreen extends World
     public WinScreen()
     {    
         super(1200, 700, 1); 
+        addObject( new BackgroundWinScreen(), 600, 350);
         ScoreAndMisc();
     }
 
@@ -37,9 +38,9 @@ public class WinScreen extends World
         loadFileBestTime ( (String) BestTimeFile);
         
 
-        if( LastTimeinSec > BestTimeinSec )
+        if( LastTimeinSec < BestTimeinSec )
         {
-            CurrentFinalTime.setText ( " NEW BEST TIME :" + LastTimeinSec /60 + ":" + LastTimeinSec %60);
+            CurrentFinalTime.setText ( " NEW BEST TIME : " + LastTimeinSec /60 + ":" + LastTimeinSec %60);
             besttime.setText( " Last Best Time : " + BestTimeinSec/60 + ":" + BestTimeinSec %60);
             deleteFile( (String) BestTimeFile);
             saveFile ( (String) BestTimeFile , true, LastTimeinSec+"");
@@ -51,9 +52,9 @@ public class WinScreen extends World
             
         }
 
-        addObject(CurrentFinalTime, 300, 200);
-        addObject(besttime, 300,100);
-
+        addObject(CurrentFinalTime, 600, 350);
+        addObject(besttime, 600,450);
+        addObject(new GoToMainMenu(), 600, 530);
     }
 
     
