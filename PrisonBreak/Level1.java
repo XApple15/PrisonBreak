@@ -12,9 +12,12 @@ import java.util.Arrays;
 public class Level1 extends World
 {
     private String filename = "misc/Timer.txt";
-    boolean IsNextToJob=false;
-    public static GreenfootSound backgroundMusic = new GreenfootSound("Soundtrack1.mp3");
+    
     public boolean musicStart = false;
+    boolean IsNextToJob=false;
+    
+    public static GreenfootSound backgroundMusic = new GreenfootSound("Soundtrack1.mp3");
+    
     public Level1()
     {    
         super(1200, 700, 1); 
