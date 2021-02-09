@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=NoVolume
+comment0.target=Music0
 comment1.params=
-comment1.target=NoVolume()
+comment1.target=Music0()
 comment2.params=
 comment2.target=void\ act()
 numComments=3

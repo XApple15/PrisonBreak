@@ -53,6 +53,7 @@ public class Player1 extends Players
         Actor player1 = (Actor)getWorld().getObjects(Player1.class).get(0);
         if (player1.getX() == 0 && player2.getX() == 0)
         {  
+            Level1.backgroundMusic.stop();
             Greenfoot.setWorld(new Level2());
         }
     }

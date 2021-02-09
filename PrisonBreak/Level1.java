@@ -13,13 +13,26 @@ public class Level1 extends World
 {
     private String filename = "misc/Timer.txt";
     boolean IsNextToJob=false;
+    public static GreenfootSound backgroundMusic = new GreenfootSound("Soundtrack1.mp3");
+    public boolean musicStart = false;
     public Level1()
     {    
         super(1200, 700, 1); 
         prepare(); 
     }
-    
-    
+    public void act()
+    {
+        MusicStart();
+    }
+    public void MusicStart()
+    {
+        if(musicStart == false)
+        {
+            backgroundMusic.playLoop();
+            backgroundMusic.setVolume(100);
+            musicStart = true;
+        }
+    }
     private void prepare()
     {
         Walls();
