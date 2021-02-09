@@ -1,4 +1,5 @@
 import greenfoot.*;  
+import java.util.List;
 public class Prisoner1 extends Prisoner
 {
     private int movingCounter = 0;
@@ -15,18 +16,22 @@ public class Prisoner1 extends Prisoner
     }    
     public void movePrisoner1()
     {
-        if(movingCounter<30)
+        List setting = getWorld().getObjects(SettingMenu.class);
+        if(setting.size() == 0)
         {
-            setLocation(getX()+1,getY());
+            if(movingCounter<30)
+            {
+                setLocation(getX()+1,getY());
+            }
+            else if(movingCounter<59)
+            {
+                setLocation(getX()-1,getY());
+            }
+            else 
+            {
+                movingCounter = 0;
+            }
+            movingCounter++;
         }
-        else if(movingCounter<59)
-        {
-            setLocation(getX()-1,getY());
-        }
-        else 
-        {
-            movingCounter = 0;
-        }
-        movingCounter++;
     }
 }

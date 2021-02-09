@@ -14,7 +14,11 @@ public class CopRunner extends NPC
 
     public void act() 
     {
+        List setting = getWorld().getObjects(SettingMenu.class);
+        if(setting.size() == 0)
+        {
             CheckPlayers();
+        }
     }    
 
     private void CheckPlayers()

@@ -21,33 +21,37 @@ public class Cop2 extends NPC
     }
         public void MovingCycle()
     {
-        if(n == 1)
+        List setting = getWorld().getObjects(SettingMenu.class);
+        if(setting.size() == 0)
         {
-        if(movingCounter < 200) {
-            setLocation(getX() + 1, getY());
-            setImage( "Cops/Cop2/Cop2_right.png");
-            changeSize(1.5 , 1.5);
+            if(n == 1)
+            {
+            if(movingCounter < 200) {
+                setLocation(getX() + 1, getY());
+                setImage( "Cops/Cop2/Cop2_right.png");
+                changeSize(1.5 , 1.5);
+            }
+            else if(movingCounter < 470)  {
+                setLocation(getX(), getY() - 1);
+                setImage( "Cops/Cop2/Cop2_back.png");
+                changeSize(1.5 , 1.5);
+            }
+            else if(movingCounter < 570)  {
+                setLocation(getX() + 1, getY());
+                setImage( "Cops/Cop2/Cop2_right.png");
+                changeSize(1.5 , 1.5);
+            }
+            else if(movingCounter < 1500)  {
+                setLocation(getX(), getY() - 1);
+                setImage( "Cops/Cop2/Cop2_back.png");
+                changeSize(1.5 , 1.5);
+            }
+            else {
+                movingCounter = 700;
+            }
+            movingCounter++;
+            }
         }
-        else if(movingCounter < 470)  {
-            setLocation(getX(), getY() - 1);
-            setImage( "Cops/Cop2/Cop2_back.png");
-            changeSize(1.5 , 1.5);
-        }
-        else if(movingCounter < 570)  {
-            setLocation(getX() + 1, getY());
-            setImage( "Cops/Cop2/Cop2_right.png");
-            changeSize(1.5 , 1.5);
-        }
-        else if(movingCounter < 1500)  {
-            setLocation(getX(), getY() - 1);
-            setImage( "Cops/Cop2/Cop2_back.png");
-            changeSize(1.5 , 1.5);
-        }
-        else {
-            movingCounter = 700;
-        }
-        movingCounter++;
-    }
     }
         public void OpenDoor2()
     {

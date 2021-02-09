@@ -24,49 +24,53 @@ public class Cop1 extends NPC
 
     public void MovingCycle()
     {
-        if(n==true)
+        List setting = getWorld().getObjects(SettingMenu.class);
+        if(setting.size() == 0)
         {
-            if(delay == false)
-            { 
-                if( System.currentTimeMillis() <  LastTime + timer )   
-                    return;
-                delay = true;
+            if(n==true)
+            {
+                if(delay == false)
+                { 
+                    if( System.currentTimeMillis() <  LastTime + timer )   
+                        return;
+                    delay = true;
+                }
+    
+                if (movingCounter < 400) {
+                    setLocation(getX() , getY() - 1);
+                    setImage( "Cops/Cop1/Cop1_back.png");
+                    changeSize(1.5 , 1.5);
+                }
+                else if (movingCounter < 550) {
+                    setLocation(getX(), getY() + 1);
+                    setImage( "Cops/Cop1/Cop1_front.png");
+                    changeSize(1.5 , 1.5);
+                }
+                else if(movingCounter < 1100)  {
+                    setLocation(getX() - 1, getY());
+                    setImage( "Cops/Cop1/Cop1_left.png");
+                    changeSize(1.5 , 1.5);
+                }
+                else if(movingCounter < 1650)  {
+                    setLocation(getX() + 1, getY());
+                    setImage( "Cops/Cop1/Cop1_right.png");
+                    changeSize(1.5 , 1.5);
+                }
+                else if(movingCounter < 1800)  {
+                    setLocation(getX(), getY() - 1);
+                    setImage( "Cops/Cop1/Cop1_back.png");
+                    changeSize(1.5 , 1.5);
+                }
+                else if(movingCounter < 2200)  {
+                    setLocation(getX(), getY() +1);
+                    setImage( "Cops/Cop1/Cop1_front.png");
+                    changeSize( 1.5 , 1.5 );
+                }
+                else {
+                    movingCounter = 0;
+                }
+                movingCounter++;
             }
-
-            if (movingCounter < 400) {
-                setLocation(getX() , getY() - 1);
-                setImage( "Cops/Cop1/Cop1_back.png");
-                changeSize(1.5 , 1.5);
-            }
-            else if (movingCounter < 550) {
-                setLocation(getX(), getY() + 1);
-                setImage( "Cops/Cop1/Cop1_front.png");
-                changeSize(1.5 , 1.5);
-            }
-            else if(movingCounter < 1100)  {
-                setLocation(getX() - 1, getY());
-                setImage( "Cops/Cop1/Cop1_left.png");
-                changeSize(1.5 , 1.5);
-            }
-            else if(movingCounter < 1650)  {
-                setLocation(getX() + 1, getY());
-                setImage( "Cops/Cop1/Cop1_right.png");
-                changeSize(1.5 , 1.5);
-            }
-            else if(movingCounter < 1800)  {
-                setLocation(getX(), getY() - 1);
-                setImage( "Cops/Cop1/Cop1_back.png");
-                changeSize(1.5 , 1.5);
-            }
-            else if(movingCounter < 2200)  {
-                setLocation(getX(), getY() +1);
-                setImage( "Cops/Cop1/Cop1_front.png");
-                changeSize( 1.5 , 1.5 );
-            }
-            else {
-                movingCounter = 0;
-            }
-            movingCounter++;
         }
 
     }

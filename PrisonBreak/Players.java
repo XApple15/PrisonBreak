@@ -26,6 +26,8 @@ public class Players extends Actor
         List <NPC> NPC = getObjectsInRange(100 , NPC.class);
         if(NPC.size() != 0)
         {
+            Level1.backgroundMusic.stop();
+            Level2.backgroundMusic1.stop();
             Greenfoot.setWorld(new LoseScreen());
         }
     }

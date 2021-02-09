@@ -46,7 +46,7 @@ public class Level2 extends World
             return;
         if (isAdded == false ) 
         {
-            addObject( new CopRunner() , 100,100);
+            addObject( new CopRunner() , 850,130);
             isAdded = true;
         }
         MusicStart();
