@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Vent1
+comment0.text=\r\n\ Vent-ul\ din\ celula\ personajelor\ principale\ ,\ care\ actioneaza\ in\ functie\ de\ tasta\ apasata\r\n\ \r\n\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=

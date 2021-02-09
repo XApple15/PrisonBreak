@@ -1,7 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.util.List;
 /**
- * Write a description of class Job1 here.
+ * Cutting vent
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -9,18 +9,19 @@ import java.util.List;
 public class Job3 extends Jobs
 {
     boolean FinishedCutting = false;
+    boolean Bar_Reverse = false ;
+    boolean finishedCutting = false;
+    
+    long lastCutTime = 01;
     long LastTime, CurrentTime;
     private int i, j, bar_number;
     private int CutDelay = 50;
-    int Player = 1;// este actionat de player 1
-    
-     long lastCutTime = 01;
     int currentCut = 0;
-    boolean finishedCutting = false;
+    int BAR_NO = 1 ;
+       
     public static final long CUT_TIME_DIF = 100;
     public static final int MAX_CUT = 10;
-    int BAR_NO = 1 ;
-    boolean Bar_Reverse = false ;
+        
     public void act() 
     {
             Cutting();
@@ -66,7 +67,4 @@ public class Job3 extends Jobs
         getWorld().addObject( new Player1(), 137, 533);
         getWorld().removeObject(this);
     }
-
-
-
 }

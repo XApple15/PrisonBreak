@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -9,17 +9,25 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Timer care foloseste fisier .txt
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+
 public class Timer extends Actor
 {
-    private String filename = "misc/Timer.txt";
+    private boolean isFirstDeleted = false;
+    
     private long StartTime = System.currentTimeMillis();
     private long currentTime,  durationSeconds;
     private long  Delay = 1000;
     private long StartTimeDelay = 01;
-    private boolean isFirstDeleted = false;
-    String LastTimeFromFile ;
-    int i =0 ;
     int z;
+    
+    String LastTimeFromFile ;
+    private String filename = "misc/Timer.txt";
 
     BestTime Timerr = new BestTime(" ");
 
@@ -36,16 +44,16 @@ public class Timer extends Actor
 
     private void SetTime()
     {
-        if( System.currentTimeMillis() < StartTimeDelay + Delay ) return;
-        StartTimeDelay = System.currentTimeMillis();
+        if( System.currentTimeMillis() < StartTimeDelay + Delay ) return; // delay de o secunda intre afisari
+        StartTimeDelay = System.currentTimeMillis(); 
 
         if( isFirstDeleted == true)  getWorld().removeObject(Timerr);
 
-        loadFile( (String) filename);
+        loadFile( (String) filename); // incarca fisierul
         currentTime = System.currentTimeMillis();
-        durationSeconds = stringToInteger ( (String) LastTimeFromFile);
-        durationSeconds = durationSeconds +1;
-        if( durationSeconds / 60 <=9 )
+        durationSeconds = stringToInteger ( (String) LastTimeFromFile); // transforma stringul cu timpul din fisier in integer
+        durationSeconds = durationSeconds +1; // adauga cate o secunda pe ciclu
+        if( durationSeconds / 60 <=9 ) // cazuri de afisare a cifrei 0 
             Timerr.setText( " Time elapsed : 0" + durationSeconds/60 + ":"+ durationSeconds%60);
         if( durationSeconds % 60 <= 9 )
             Timerr.setText( " Time elapsed : " + durationSeconds/60 + ":0"+ durationSeconds%60);
@@ -56,7 +64,7 @@ public class Timer extends Actor
         getWorld().addObject( Timerr , 210 ,37);
         // deleteFile( (String) filename);
 
-        saveFile( (String) filename , true , durationSeconds+"");
+        saveFile( (String) filename , true , durationSeconds+""); // adauga un string cu numarul de secunde curent
     }
 
     public boolean deleteFile(String filename) {

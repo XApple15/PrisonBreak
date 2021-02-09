@@ -8,12 +8,14 @@ public class Vent3 extends Vents
     private boolean HoldCadded = false;
     private boolean isTurned = false;
     private boolean GoToVentadded = false;
+    
     private long LastTime = 01;
     private int DelayEx = 200;
 
     BiggerHint GoToVent = new BiggerHint(" ");
     Hint HoldC = new Hint(" ");
     HintAlert DontCutCop = new HintAlert(" ");
+    
     String GoToVenttxt = "Go to the second Vent \n with yellow margins!" ;
     String HoldCtxt = "Hold C to cut the vents!";
     String DontCutCoptxt = "Don`t cut the vents while\nthere is a cop in the room!";
@@ -42,6 +44,7 @@ public class Vent3 extends Vents
         Hints();
         
         List <Player1> Player1 = getObjectsInRange(40 , Player1.class);
+        
         if( Player1.size() == 0 && GoToVentadded == false ) 
         {
             if( GoToVentadded == false )
@@ -60,8 +63,7 @@ public class Vent3 extends Vents
         if( Player1.size() !=0)
         {
             getWorld().removeObject(GoToVent);     GoToVentadded = false;
-            getWorld().addObject(HoldC, 181, 680);   HoldCadded = true;
-            
+            getWorld().addObject(HoldC, 181, 680);   HoldCadded = true;         
             if( DontCutCopadded == false  ) 
             {
                 getWorld().addObject( DontCutCop, 181, 635);
@@ -70,28 +72,25 @@ public class Vent3 extends Vents
             if( ishere == false && Greenfoot.isKeyDown("c") == true )
             {
                 List <Cop2> Cop11 = getObjectsInRange( 100, Cop2.class);
-                if( Cop11.size() != 0 )
+                if( Cop11.size() != 0 ) // Losescreen daca este cop in camera si playerul taie
                 {
-                    // FAIL screen
+                    Greenfoot.setWorld( new LoseScreen());
+                    return;
                 }
                 getWorld().removeObject( HoldC );   HoldCdeleted = true;
                 getWorld().removeObject( DontCutCop);
-
                 getWorld().addObject( new Job3(), 181,555);
                 ishere= true;
             }
         }
-
         if( Greenfoot.isKeyDown("c") == true )
         {
             getWorld().removeObject( HoldC);
         }
-
         if( ishere == true && Greenfoot.isKeyDown("c") == false ) // reseteaza pentru ca daca nu mai apasa c, job 1 se sterge
         {
             ishere = false;
-        }
-        
+        }        
     }
 }
 

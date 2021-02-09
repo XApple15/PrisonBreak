@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TextBox here.
+ * Aici creez TextBox pentru PreGame , cu dimeniuni in functie de numarul de linii
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ *
+ * 
  */
 public class TextBox extends Actor
 {
@@ -12,40 +12,26 @@ public class TextBox extends Actor
     {
         setTextt( text);
     }
-     
+
     public void setTextt(String text)
     {
-         int width = 600; // maximum width of a line
-         int size = 24; // font size of text
-         int height = new GreenfootImage(" ", size, null, null).getHeight();
-        String[] lines = text.split("\n"); // get lines
-        GreenfootImage image = new GreenfootImage(width, height*lines.length); // final image
+        int width = 400; // latimea maxima
+        int size = 24; // marimea fontului
+        int height = new GreenfootImage(" ", size, null, null).getHeight();
+        
+        String[] lines = text.split("\n"); // ia numarul de linii din cod si memoreaza in lines , caracterele fiecarei linii
+        
+        GreenfootImage image = new GreenfootImage(width, height*lines.length); // creeaza box ul in functie de numerul de linii
+        image.setColor(new greenfoot.Color(255, 204, 102));
+        image.fill();
+        
         for (int i=0; i<lines.length; i++)
-        { // draw each line image on final image
+        { // construieste cutia cu linii
             GreenfootImage line = new GreenfootImage(lines[i], size, null, null);
             image.drawImage(line, 10, i*height);
         }
         
-        //GreenfootImage textImg = new GreenfootImage("Hint: " + text, 22, Color.BLACK, new Color(0, 0, 0, 0));
-        //GreenfootImage img = new GreenfootImage(354, 44);
-        //img.setColor(new greenfoot.Color(255, 204, 102));
-        //img.fill();
-        //img.drawImage(textImg, 177-textImg.getWidth()/2, 22-textImg.getHeight()/2);
         setImage(image);
-        
-       
-    }
-    
-    
-    public int countChar(String str, char c , char d)
-{
-    int count = 0;
-
-    for(int i=0; i < str.length() - 1; i++)
-    {    if (str.charAt(i) == c &&  str.charAt(i+1) == 'n')
-            count++;
     }
 
-    return count;
-}
 }

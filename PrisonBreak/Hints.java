@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Hints here.
+ * Hinturi Gameplay
  * 
  * @author (your name) 
  * @version (a version number or a date)

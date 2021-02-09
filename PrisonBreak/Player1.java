@@ -13,8 +13,7 @@ public class Player1 extends Players
             {
                 setLocation(getX(), getY()+3);
             }
-            setImage( "Players/Player1/Pl_1_back.png");
-            
+            setImage( "Players/Player1/Pl_1_back.png");            
         }
         if(Greenfoot.isKeyDown("a"))
         {
@@ -23,8 +22,7 @@ public class Player1 extends Players
             {
             setLocation(getX()+3, getY());
             }
-            setImage( "Players/Player1/Pl_1_left.png");
-            
+            setImage( "Players/Player1/Pl_1_left.png");           
         }
         if(Greenfoot.isKeyDown("s"))
         {
@@ -33,8 +31,7 @@ public class Player1 extends Players
             {
                 setLocation(getX(), getY()-3);
             }
-            setImage( "Players/Player1/Pl_1_front.png");
-            
+            setImage( "Players/Player1/Pl_1_front.png");            
         }
         if(Greenfoot.isKeyDown("d"))
         {
@@ -43,14 +40,12 @@ public class Player1 extends Players
             {
             setLocation(getX() - 3, getY());
             }
-            setImage( "Players/Player1/Pl_1_right.png");
-            
+            setImage( "Players/Player1/Pl_1_right.png");            
         }
     } 
     public Player1()
     {
-        setImage("Players/Player1/Pl_1_left.png");
-        
+        setImage("Players/Player1/Pl_1_left.png");       
     }
     public void WinGame()
     {

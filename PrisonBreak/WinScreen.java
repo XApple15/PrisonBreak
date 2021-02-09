@@ -9,14 +9,22 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+/**
+ * afiseaza Current Time si Best Time, iar in caz ca Current Time < Best Time, creeaza un nou bestscore
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+
 public class WinScreen extends World
 {
     public int BestTimeinSec;
     public int LastTimeinSec;
+    
     private String BestTimeFile = "misc/BestTime.txt";
     private String LastTimeFile = "misc/Timer.txt";
-    int mins = 45;
-    int sec = 35;
+   
 
     public void act()
     {
@@ -34,8 +42,8 @@ public class WinScreen extends World
     {
         BestTime CurrentFinalTime = new BestTime(" ");
         BestTime besttime = new BestTime(" ");
-        loadFileLastTime( (String) LastTimeFile);
-        loadFileBestTime ( (String) BestTimeFile);
+        loadFileLastTime( (String) LastTimeFile); 
+        loadFileBestTime ( (String) BestTimeFile); 
         
 
         if( LastTimeinSec < BestTimeinSec )
@@ -48,15 +56,13 @@ public class WinScreen extends World
         else 
         {
             CurrentFinalTime.setText ( " Current Time : " + LastTimeinSec/60 + ":" + LastTimeinSec %60);
-            besttime.setText( " Your Best Time : " + BestTimeinSec/60 + ":" + BestTimeinSec%60);
-            
+            besttime.setText( " Your Best Time : " + BestTimeinSec/60 + ":" + BestTimeinSec%60);           
         }
 
         addObject(CurrentFinalTime, 600, 350);
         addObject(besttime, 600,450);
         addObject(new GoToMainMenu(), 600, 530);
     }
-
     
     public java.util.List<String> loadFileLastTime(String filename) {
         ArrayList<String> fileText = new ArrayList<String>();

@@ -1,6 +1,12 @@
 import greenfoot.*;  
 import java.util.List;
 
+/**
+ * Vent-ul din celula personajelor principale , care actioneaza in functie de tasta apasata
+ * 
+ *
+ * 
+ */
 public class Vent1 extends Vents
 {
 
@@ -11,26 +17,22 @@ public class Vent1 extends Vents
 
     private long LastTime = 01;
     private int DelayEx = 200;
-
-    private int i;
-    private int direction = 1;
-    private int Delay = 100 ; // delay pt afisarea imaginilor ventului
+    
     Hint GoToVent = new Hint(" ");
     Hint HoldC = new Hint(" ");
+    
     String GoToVenttxt = "Go near the vent in your cell " ;
     String HoldCtxt = "Hold C to cut the vents";
 
-    private int imageNumber;
     public void act()
-    {
-        
+    {        
         VerifPlayer1();         
     }
 
     private void  Hints()
     {
-       HoldC.setText( HoldCtxt );
-       GoToVent.setText( GoToVenttxt );
+        HoldC.setText( HoldCtxt );
+        GoToVent.setText( GoToVenttxt );
     }
 
     public Vent1() 
@@ -43,10 +45,11 @@ public class Vent1 extends Vents
     { 
         if( System.currentTimeMillis() <  LastTime + DelayEx )  return;
         LastTime = System.currentTimeMillis();
-        
+
         Hints();
 
-        List <Player1> Player1 = getObjectsInRange(40 , Player1.class);
+        List <Player1> Player1 = getObjectsInRange(40 , Player1.class); // verifica daca player1 este in apropiere
+        
         if( Player1.size() == 0 ) getWorld().addObject(GoToVent, 181, 653);  // adauga hint ul 
         if( Player1.size() !=0)
         {
@@ -64,12 +67,10 @@ public class Vent1 extends Vents
         {
             getWorld().removeObject( HoldC);
         }
-
         if( ishere == true && Greenfoot.isKeyDown("c") == false )
         {
             ishere = false;
-            getWorld().removeObject(HoldC);
-            
+            getWorld().removeObject(HoldC);            
         }
 
     }

@@ -1,7 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.util.List;
 /**
- * Write a description of class TransparentVentExit here.
+ * Ventul transparent care apare dupa ce se foloseste WalkieTalkie
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -10,12 +10,15 @@ public class TransparentVentEnter extends Vents
 {
     private boolean GoToVentadded = false;
     private boolean PressToEnteradded = false;
+    
     BiggerHint GoToVent = new BiggerHint(" ");   
     Hint PressToEnter = new Hint(" ");
     Hint Follow = new Hint(" ");
+    
     String Followtxt = "Follow your EX-cellmate";
     String GoToVenttxt =  "Go to the next Vent cut \nby your Ex-cellmate ";
     String PressToEntertxt = "Press NUM0 to enter Ventroom";
+    
     public void act() 
     {
         GoToVent.setText(GoToVenttxt);
@@ -65,7 +68,6 @@ public class TransparentVentEnter extends Vents
                 getWorld().removeObject(this);
             }
         }
-
     }
 }
 

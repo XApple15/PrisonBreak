@@ -12,18 +12,16 @@ public class Player2 extends Players
             {
                 setLocation(getX(), getY()+3);
             }
-            setImage( "Players/Player2/Pl_2_back.png");
-            
+            setImage( "Players/Player2/Pl_2_back.png");            
         }
         if(Greenfoot.isKeyDown("left"))
         {
             setLocation(getX()-3, getY());
             if(hitObject())
             {
-            setLocation(getX()+3, getY());
+                setLocation(getX()+3, getY());
             }
-            setImage( "Players/Player2/Pl_2_left.png");
-            
+            setImage( "Players/Player2/Pl_2_left.png");           
         }
         if(Greenfoot.isKeyDown("down"))
         {
@@ -32,25 +30,23 @@ public class Player2 extends Players
             {
                 setLocation(getX(), getY()-3);
             }
-            setImage( "Players/Player2/Pl_2_front.png");
-            
+            setImage( "Players/Player2/Pl_2_front.png");            
         }
         if(Greenfoot.isKeyDown("right"))
         {
             setLocation(getX() + 3, getY());
             if(hitObject())
             {
-            setLocation(getX() - 3, getY());
+                setLocation(getX() - 3, getY());
             }
-            setImage( "Players/Player2/Pl_2_right.png");
-            
+            setImage( "Players/Player2/Pl_2_right.png");            
         }
     }
-     public Player2()
+
+    public Player2()
     {
         setImage( "Players/Player2/Pl_2_left.png");
     }
 
-    }     
-
+}     
 

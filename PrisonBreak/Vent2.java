@@ -1,24 +1,30 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+/**
+ * Vent-ul din camera gardianului 
+ * 
+ *
+ * 
+ */
 public class Vent2 extends Vents
 { 
     private boolean ishere= false;
     private boolean HoldCdeleted = false;
     private boolean DontCutCopadded= false;
     private boolean HoldCadded = false;
-    private boolean isTurned = false;
     private boolean GoToVentadded = false ;
-    public boolean CopLeft = false;
+    
     private long LastTime = 01;
     private int DelayEx = 200;
-    private int i;
-    public int timer = 500;
+   
     BiggerHint GoToVent = new BiggerHint(" ");
     Hint HoldC = new Hint(" ");
     HintAlert DontCutCop = new HintAlert(" ");
+    
     String GoToVenttxt = "Go to the first Vent \nwith yellow margins!" ;
     String HoldCtxt = "Hold NUM5 to cut the vents!";
     String DontCutCoptxt = "Don`t cut the vents while\nthere is a cop in the room!";
+    
     public void act()
     {       
         VerifPlayer2();
@@ -47,46 +53,40 @@ public class Vent2 extends Vents
 
         if( Player2.size() == 0 && GoToVentadded == false ) 
         {
-   
             if( GoToVentadded == false ) 
-            {
-                GoToVentadded= true;
-                getWorld().addObject(GoToVent, 1019, 670);
+            { 
+                getWorld().addObject(GoToVent, 1019, 670);   GoToVentadded= true;
             }
             if ( HoldCadded == true )
             {
-                getWorld().removeObject( HoldC );
-                HoldCadded = false;
+                getWorld().removeObject( HoldC );    HoldCadded = false;         
             }
             if( DontCutCopadded == true ) // sterge Hintul daca playerul nu mai este
             {
-                getWorld().removeObject( DontCutCop );
-                DontCutCopadded = false;
+                getWorld().removeObject( DontCutCop );    DontCutCopadded = false;   
             }
         }
         if( Player2.size() !=0)
         {
             if( GoToVentadded == true )
             {
-                getWorld().removeObject(GoToVent);    
-                GoToVentadded = false;
+                getWorld().removeObject(GoToVent);    GoToVentadded = false;                
             }
             if( HoldCadded == false )
             {
-                getWorld().addObject(HoldC, 1019, 680); 
-                HoldCadded = true;
+                getWorld().addObject(HoldC, 1019, 680);   HoldCadded = true;              
             }
             if( DontCutCopadded == false  ) 
             {
-                getWorld().addObject( DontCutCop, 1019, 635);
-                DontCutCopadded = true;
+                getWorld().addObject( DontCutCop, 1019, 635);   DontCutCopadded = true;                
             }
             if(  ishere == false && Greenfoot.isKeyDown("5") == true )
             {
                 List <Cop1> Cop11 = getObjectsInRange( 100, Cop1.class);
-                if( Cop11.size() != 0 )
+                if( Cop11.size() != 0 ) // fail daca cop ul este in apropiere
                 {
-                    // FAIL screen
+                    Greenfoot.setWorld( new LoseScreen());
+                    return;
                 }
                 getWorld().removeObject( HoldC );
                 getWorld().removeObject( DontCutCop);
