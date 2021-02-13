@@ -16,6 +16,8 @@ public class Exit extends Buttons
         checkMouse();
         if(Greenfoot.mouseClicked(this))
         {
+            if(getWorld() instanceof MainMenu)
+                MainMenu.soundtrack.stop();
             Greenfoot.stop();
         }
     }    

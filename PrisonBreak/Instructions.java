@@ -15,5 +15,10 @@ public class Instructions extends Buttons
     {
         checkMouse();
         checkClick(new HowToPlay());
+        if (Greenfoot.mouseClicked(this))
+        {
+            if(getWorld() instanceof MainMenu)
+                MainMenu.soundtrack.stop();
+        }
     }    
 }

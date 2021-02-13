@@ -1,12 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.util.List;
 import java.lang.Math; 
-/**
- * Write a description of class CopRunner here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class CopRunner extends NPC
 {
     double distPlayer1toCop, distPlayer2toCop ;

@@ -15,6 +15,10 @@ public class Play extends Buttons
     {
         checkMouse(); 
         checkClick(new PreGame()); 
-        startingMusic();
+        if (Greenfoot.mouseClicked(this))
+        {
+            if(getWorld() instanceof MainMenu)
+                MainMenu.soundtrack.stop();
+        }
     } 
 }

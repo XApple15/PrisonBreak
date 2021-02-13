@@ -18,6 +18,6 @@ public class BackgroundWinScreen extends NoCollision
     }    
     public BackgroundWinScreen ()
     {
-        setImage("Backgrounds/WinScreen.png");
+        setImage("Backgrounds/WinScreen.jpg");
     }
 }

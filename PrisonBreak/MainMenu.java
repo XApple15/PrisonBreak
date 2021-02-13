@@ -13,12 +13,17 @@ import java.util.Arrays;
 public class MainMenu extends World
 {
     private String filename = "misc/BestTime.txt";
+    public static GreenfootSound soundtrack = new GreenfootSound("jail.mp3");
+    private boolean musicStart = false;
     public MainMenu()
     {    
         super(1200, 700, 1); 
         prepare();
     }
-
+    public void act()
+    {
+        MusicStart();
+    }
     private void prepare()
     {
         GreenfootImage logo = new GreenfootImage("Logo.png");
@@ -83,5 +88,14 @@ public class MainMenu extends World
         int val = 0;
         for (int i = 0; i < numStr.length(); i++) val = val * 10 + "0123456789".indexOf(numStr.charAt(i));
         return val;
+    }
+    public void MusicStart()
+    {
+        if(musicStart == false)
+        {
+            soundtrack.playLoop();
+            soundtrack.setVolume(100);
+            musicStart = true;
+        }
     }
 }

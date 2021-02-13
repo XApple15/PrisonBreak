@@ -17,7 +17,7 @@ public class Level1 extends World
     boolean IsNextToJob=false;
     
     public static GreenfootSound backgroundMusic = new GreenfootSound("Soundtrack1.mp3");
-    
+
     public Level1()
     {    
         super(1200, 700, 1); 

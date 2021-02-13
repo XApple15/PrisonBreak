@@ -19,6 +19,8 @@ public class WalkieTalkie extends GuardiansRoom
     String PressToSpeaktxt = "Press NUM1 to speak";
     String ReadThistxt = " Press NUM2 to make the Chief leave his room" ;
     
+    public static GreenfootSound walkietalkie = new GreenfootSound("WalkieTalkie.mp3");
+    
     public void act() 
     {
         RunJob();
@@ -68,7 +70,7 @@ public class WalkieTalkie extends GuardiansRoom
 
                 if( Greenfoot.isKeyDown("1") == true )
                 {
-                    Greenfoot.playSound("WalkieTalkie.mp3");
+                    walkietalkie.play();
                     Cop2 cop2info = (Cop2)getWorld().getObjects(Cop2.class).get(0);
                     cop2info.n = 1;
                     DONE = true;

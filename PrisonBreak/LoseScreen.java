@@ -10,6 +10,6 @@ public class LoseScreen extends World
     private void AddButtons()
     {
         addObject( new LoseScreenBackground() , 600, 350);
-        addObject( new GoToMainMenu() , 600,552);
+        addObject( new MainMenuButton() , 600,552);
     }
 }

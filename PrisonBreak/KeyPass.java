@@ -27,7 +27,7 @@ public class KeyPass extends Jobs
             }
         }
     }   
-        public void code()
+    public void code()
     {
         if(Greenfoot.mouseClicked(null))
         {
