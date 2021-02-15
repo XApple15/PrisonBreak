@@ -1,6 +1,16 @@
 import greenfoot.*;  
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 public class KeyPass extends Jobs
 {
+    private String CodeFile = "misc/Code.txt";
     private boolean click = false;
     public int m = 10;
     public int n = 10;
@@ -8,6 +18,10 @@ public class KeyPass extends Jobs
     public int q = 10;
     public int code;
     private boolean dooropen = false;
+    private int CODE;
+    private int fails = 0;
+    private boolean hasFailed= false;
+    private boolean isLoadedCode = false;
     public KeyPass()
     {
         setImage("KeyPass.png");
@@ -15,7 +29,12 @@ public class KeyPass extends Jobs
     public void act() 
     {
         code();
-        if(code==securityCode)
+        if( isLoadedCode == false )
+        {
+            loadFile(CodeFile);
+            isLoadedCode = true;
+        }
+            if(code==CODE)
         {
             getWorld().removeObjects(getWorld().getObjects(BigDoor.class));
             if(dooropen == false)
@@ -25,6 +44,16 @@ public class KeyPass extends Jobs
             celldoor.setRotation(90);
             dooropen = true;
             }
+        }
+        if(code != CODE && code >1000 && hasFailed == false )
+        {
+            fails ++;
+            if( fails == 3 ) Greenfoot.setWorld(new LoseScreen() );
+            hasFailed = true;
+        }
+        if( code == 0 )
+        {
+            hasFailed = false;
         }
     }   
     public void code()
@@ -114,4 +143,45 @@ public class KeyPass extends Jobs
         }
     }
     String scodes =String.valueOf(code);
+  
+    public java.util.List<String> loadFile(String filename) {
+        ArrayList<String> fileText = new ArrayList<String>();
+        BufferedReader file = null;
+        try {
+            file = new BufferedReader(new FileReader(filename));
+            String input;
+            while ((input = file.readLine()) != null) {
+                fileText.add(input);
+            }
+        }
+        catch (FileNotFoundException fnfe) {
+            //fnfe.printStackTrace();
+            return null;
+        }
+        catch (IOException ioe) {
+            //ioe.printStackTrace();
+            return null;
+        }
+        finally {
+            try {
+                file.close();
+            }
+            catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
+            catch (NullPointerException npe) {
+                //npe.printStackTrace();
+            }
+        }
+        
+        CODE = stringToInteger( (String) fileText.get(0));
+        return fileText;
+    }
+    
+     private int stringToInteger(String numStr)
+    {
+        int val = 0;
+        for (int i = 0; i < numStr.length(); i++) val = val * 10 + "0123456789".indexOf(numStr.charAt(i));
+        return val;
+    }
 }

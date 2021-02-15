@@ -77,7 +77,7 @@ public class Cop1 extends NPC
 
     public void PlayerNearby()
     {
-        if(timer < 1 && isSet == false)
+        if(timer < 20000 && isSet == false)
         {
             timer = Greenfoot.getRandomNumber(45000);
             return;
