@@ -22,10 +22,13 @@ public class KeyPass extends Jobs
     private int fails = 0;
     private boolean hasFailed= false;
     private boolean isLoadedCode = false;
+    private boolean canFail = true;
+    private boolean CODEFAILED = false;
     public KeyPass()
     {
         setImage("KeyPass.png");
     }
+
     public void act() 
     {
         code();
@@ -34,28 +37,26 @@ public class KeyPass extends Jobs
             loadFile(CodeFile);
             isLoadedCode = true;
         }
-            if(code==CODE)
+        if(code==CODE)
         {
             getWorld().removeObjects(getWorld().getObjects(BigDoor.class));
             if(dooropen == false)
             {
-            CellDoor celldoor = new CellDoor();
-            getWorld().addObject(celldoor, 20, 280);
-            celldoor.setRotation(90);
-            dooropen = true;
+                CellDoor celldoor = new CellDoor();
+                getWorld().addObject(celldoor, 20, 280);
+                celldoor.setRotation(90);
+                dooropen = true;
             }
         }
-        if(code != CODE && code >1000 && hasFailed == false )
+        if(code != CODE && code >1000 && canFail == true )
         {
             fails ++;
-            if( fails == 3 ) Greenfoot.setWorld(new LoseScreen() );
-            hasFailed = true;
+            if( fails == 5 ) Greenfoot.setWorld(new LoseScreen() ); // La 5 incercari gresite de a baga codul, playerii pierd jocul
+            canFail = false;
         }
-        if( code == 0 )
-        {
-            hasFailed = false;
-        }
+
     }   
+
     public void code()
     {
         if(Greenfoot.mouseClicked(null))
@@ -137,13 +138,19 @@ public class KeyPass extends Jobs
                 getWorld().removeObjects(getWorld().getObjects(Digital.class));
             }
         }
+        if( m == 10 && n == 10 && p == 10 && q == 10 && CODEFAILED == false )
+        {
+            canFail = true;
+            CODEFAILED = true;
+        }
         if(m!=10 && n!=10 && p!=10 && q!=10)
         {
             code = m*1000+n*100+p*10+q;
+            CODEFAILED = false;
         }
     }
     String scodes =String.valueOf(code);
-  
+
     public java.util.List<String> loadFile(String filename) {
         ArrayList<String> fileText = new ArrayList<String>();
         BufferedReader file = null;
@@ -173,12 +180,12 @@ public class KeyPass extends Jobs
                 //npe.printStackTrace();
             }
         }
-        
+
         CODE = stringToInteger( (String) fileText.get(0));
         return fileText;
     }
-    
-     private int stringToInteger(String numStr)
+
+    private int stringToInteger(String numStr)
     {
         int val = 0;
         for (int i = 0; i < numStr.length(); i++) val = val * 10 + "0123456789".indexOf(numStr.charAt(i));
