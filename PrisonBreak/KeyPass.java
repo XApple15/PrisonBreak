@@ -11,19 +11,22 @@ import java.util.Arrays;
 public class KeyPass extends Jobs
 {
     private String CodeFile = "misc/Code.txt";
+    
     private boolean click = false;
-    public int m = 10;
-    public int n = 10;
-    public int p = 10;
-    public int q = 10;
-    public int code;
-    private boolean dooropen = false;
-    private int CODE;
-    private int fails = 0;
     private boolean hasFailed= false;
     private boolean isLoadedCode = false;
     private boolean canFail = true;
     private boolean CODEFAILED = false;
+    private boolean dooropen = false;
+    
+    public int m = 10;
+    public int n = 10;
+    public int p = 10;
+    public int q = 10;
+    public int code;    
+    private int CODE;
+    private int fails = 0;
+    
     public KeyPass()
     {
         setImage("KeyPass.png");

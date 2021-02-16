@@ -49,6 +49,11 @@ public class KeyPad extends Objects
     {
         List <Player1> Player2 = getObjectsInRange(120 , Player1.class);
         List <Desk> DeskHack = getObjectsInRange( 500, Desk.class);
+        if( Player2.size() == 0 && ishere == true)
+        {
+            getWorld().removeObjects( getWorld().getObjects(KeyPass.class));
+            ishere = false;
+        }
         if( DeskHack.size() == 0 ) 
         {
             if( followadded == false )
@@ -58,19 +63,19 @@ public class KeyPad extends Objects
             }
             if( gotoprisonexit == false)
             {
-                getWorld().addObject( GoToPrisonExit , 181,620);
+                getWorld().addObject( GoToPrisonExit , 181,640);
                 gotoprisonexit = true;
             }
             if( Player2.size() !=0 && ishere == false ) 
             {
                 getWorld().removeObject( GoToPrisonExit);
-
+                getWorld().addObject( PressCtoTypeTheCode, 181, 640 );
                 if( Greenfoot.isKeyDown("c") ) 
                 {
                     if( presstotype == true) getWorld().removeObject( PressCtoTypeTheCode);
                     if( typecode == false )
                     {
-                        getWorld().addObject(TypeCode , 181,640);
+                        getWorld().addObject(TypeCode , 181,680);
                         typecode = true;
                     }
                     KeyPass KeyPass1 = new KeyPass();

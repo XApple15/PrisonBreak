@@ -59,8 +59,8 @@ public class WinScreen extends World
             besttime.setText( " Your Best Time : " + BestTimeinSec/60 + ":" + BestTimeinSec%60);           
         }
 
-        addObject(CurrentFinalTime, 600, 350);
-        addObject(besttime, 600,450);
+        addObject(CurrentFinalTime, 182, 450);
+        addObject(besttime, 968,450);
         addObject(new GoToMainMenu(), 600, 530);
     }
     

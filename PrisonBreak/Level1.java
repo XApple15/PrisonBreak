@@ -40,7 +40,7 @@ public class Level1 extends World
     {
         Walls();
         deleteFile( (String) filename);
-        saveFile( (String) filename, true, "1");
+        saveFile( (String) filename, true, "0");
         Settings settings = new Settings();
         addObject(settings,1150,25);
         
