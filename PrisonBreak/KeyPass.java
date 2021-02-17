@@ -11,22 +11,20 @@ import java.util.Arrays;
 public class KeyPass extends Jobs
 {
     private String CodeFile = "misc/Code.txt";
-    
     private boolean click = false;
-    private boolean hasFailed= false;
-    private boolean isLoadedCode = false;
-    private boolean canFail = true;
-    private boolean CODEFAILED = false;
-    private boolean dooropen = false;
-    
     public int m = 10;
     public int n = 10;
     public int p = 10;
     public int q = 10;
-    public int code;    
+    public int code;
+    private boolean dooropen = false;
+    private boolean dooropen1 = false;
     private int CODE;
     private int fails = 0;
-    
+    private boolean hasFailed= false;
+    private boolean isLoadedCode = false;
+    private boolean canFail = true;
+    private boolean CODEFAILED = false;
     public KeyPass()
     {
         setImage("KeyPass.png");
@@ -43,12 +41,25 @@ public class KeyPass extends Jobs
         if(code==CODE)
         {
             getWorld().removeObjects(getWorld().getObjects(BigDoor.class));
+            if(getWorld() instanceof Level1)
+            {
             if(dooropen == false)
             {
                 CellDoor celldoor = new CellDoor();
                 getWorld().addObject(celldoor, 20, 280);
                 celldoor.setRotation(90);
                 dooropen = true;
+            }
+            }
+            if(getWorld() instanceof Level2)
+            {
+                if(dooropen1 == false)
+                {
+                CellDoor celldoor1 = new CellDoor();
+                getWorld().addObject(celldoor1, 213, 400);
+                celldoor1.setRotation(90);
+                dooropen1 = true;
+                }
             }
         }
         if(code != CODE && code >1000 && canFail == true )

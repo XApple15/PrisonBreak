@@ -10,6 +10,8 @@ public class Resume extends SettingMenu
     {
         if(Greenfoot.mouseClicked(this))
         {
+            Settings setting = (Settings)getWorld().getObjects(Settings.class).get(0);
+            setting.clickon = false;
             getWorld().removeObjects(getWorld().getObjects(SettingMenu.class));
         }
     }
