@@ -1,31 +1,31 @@
-import greenfoot.*;  
+import greenfoot.*; 
 import java.util.List;
-public class Prisoner1 extends Prisoner
+public class Prisoneer2 extends Prisoneer
 {
     private int movingCounter = 0;
-    public Prisoner1()
+    public Prisoneer2()
     {
-        GreenfootImage P1 = new GreenfootImage("P1.png");
-        setImage(P1);
+        GreenfootImage P2 = new GreenfootImage("P2.png");
+        setImage(P2);
         changeSize(4,4);
         ImageSet();
     }
     public void act() 
     {
-        movePrisoner1();
+        movePrisoner2();
     }    
-    public void movePrisoner1()
+    public void movePrisoner2()
     {
         List setting = getWorld().getObjects(SettingMenu.class);
         if(setting.size() == 0)
         {
             if(movingCounter<30)
             {
-                setLocation(getX()+1,getY());
+                setLocation(getX(),getY()+1);
             }
             else if(movingCounter<59)
             {
-                setLocation(getX()-1,getY());
+                setLocation(getX(),getY()-1);
             }
             else 
             {

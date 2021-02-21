@@ -1,5 +1,5 @@
 import greenfoot.*;  
-public class Prisoner extends Actor
+public class Prisoneer extends Actor
 {
     public void act() 
     {

@@ -55,6 +55,7 @@ public class Vent1 extends Vents
         {
             getWorld().removeObject(GoToVent);    
             getWorld().addObject(HoldC, 181, 680);
+            HoldCdeleted = false;
             if( ishere == false && Greenfoot.isKeyDown("c"))
             {
                 getWorld().removeObject( HoldC );
@@ -71,6 +72,11 @@ public class Vent1 extends Vents
         {
             ishere = false;
             getWorld().removeObject(HoldC);            
+        }
+        if( Player1.size() == 0 && HoldCdeleted == false )
+        {
+            getWorld().removeObject( HoldC);
+            HoldCdeleted = true;
         }
 
     }

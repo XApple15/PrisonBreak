@@ -5,8 +5,8 @@ public class Level2 extends World
     long FirstTimeAdd = System.currentTimeMillis();
     long DelayAddCop = 10000;
     private boolean isAdded = false;
-    public static GreenfootSound backgroundMusic1 = new GreenfootSound("Soundtrack2.mp3");
-    public boolean musicStart = false;
+    public static GreenfootSound backgroundMusic1 ;
+    
     public Level2()
     {    
         super(1200, 700, 1); 
@@ -15,12 +15,12 @@ public class Level2 extends World
     
     public void MusicStart()
     {
-        if(musicStart == false)
-        {
-            backgroundMusic1.playLoop();
-            backgroundMusic1.setVolume(100);
-            musicStart = true;
-        }
+        if (backgroundMusic1 == null)
+    {
+        backgroundMusic1 =new GreenfootSound("Soundtrack2.mp3");
+        backgroundMusic1.setVolume(100);
+    }
+    backgroundMusic1.playLoop();
     }
     public void Description()
     {
@@ -42,13 +42,13 @@ public class Level2 extends World
     
     public void act()
     {
+        MusicStart();
         if( System.currentTimeMillis() < FirstTimeAdd + DelayAddCop ) 
             return;
         if (isAdded == false ) 
         {
             addObject( new CopRunner() , 850,130);
             isAdded = true;
-        }
-        MusicStart();
+        }        
     }
 }

@@ -9,8 +9,10 @@ public class GoToMainMenu extends SettingMenu
     {
         if(Greenfoot.mouseClicked(this))
         {
-            Level2.backgroundMusic1.stop();
-            Level1.backgroundMusic.stop();
+            if(getWorld() instanceof Level1)
+                Level1.backgroundMusic.stop();
+           if(getWorld() instanceof Level2)
+                Level2.backgroundMusic1.stop();
             Greenfoot.setWorld(new MainMenu());
         }
     }    

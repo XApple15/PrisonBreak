@@ -16,16 +16,6 @@ public class displayCode extends Hack
     private int CODE;
     public void act()
     {
-        if( isGenerated == false)
-        {
-            CODE = Greenfoot.getRandomNumber( 9999 );
-            if ( CODE > 1245) 
-            {
-                isGenerated = true;
-                return;
-            }
-            return;
-        }
     }
 
     public displayCode()

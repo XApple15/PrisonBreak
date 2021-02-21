@@ -1,7 +1,0 @@
-// GreenfootImage img = new GreenfootImage(300, 26);
-
-Player 1 ( stanga ) :
-	GoToVent : x= 400
-		   y= 650
-	HoldC : x= 400
-		y= 600
