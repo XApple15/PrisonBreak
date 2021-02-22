@@ -14,7 +14,7 @@ public class MainMenu extends World
 {
     private String filename = "misc/BestTime.txt";
     public static GreenfootSound soundtrack ;
-    
+
     public MainMenu()
     {    
         super(1200, 700, 1); 

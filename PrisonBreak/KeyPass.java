@@ -8,19 +8,21 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+
 public class KeyPass extends Jobs
 {
-    private String CodeFile = "misc/Code.txt";
-    private boolean click = false;
+    private String CodeFile = "misc/Code.txt";    
     public int m = 10;
     public int n = 10;
     public int p = 10;
     public int q = 10;
-    public int code;
-    private boolean dooropen = false;
-    private boolean dooropen1 = false;
     private int CODE;
     private int fails = 0;
+    public int code;
+    
+    private boolean click = false;
+    private boolean dooropen = false;
+    private boolean dooropen1 = false;
     private boolean hasFailed= false;
     private boolean isLoadedCode = false;
     private boolean canFail = true;

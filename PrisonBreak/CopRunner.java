@@ -1,7 +1,9 @@
 import greenfoot.*;  
 import java.util.List;
 import java.lang.Math; 
-
+/*
+ * Cop care urmareste playerii
+ */
 public class CopRunner extends NPC
 {
     double distPlayer1toCop, distPlayer2toCop ;

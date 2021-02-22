@@ -13,6 +13,7 @@ public class Player2 extends Players
     {
         setImage( "Players/Player2/Pl_2_left.png");
     }
+    
     public void Movement()
     {
         List setting = getWorld().getObjects(SettingMenu.class);

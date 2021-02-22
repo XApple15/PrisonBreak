@@ -12,6 +12,7 @@ public class LoadingBar extends Hack
             image.scale(wide, high);
         }
     }
+
     public void act()
     {
         setImage(gifImage.getCurrentImage());

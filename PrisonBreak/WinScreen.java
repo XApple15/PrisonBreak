@@ -21,14 +21,13 @@ public class WinScreen extends World
 {
     public int BestTimeinSec;
     public int LastTimeinSec;
-    
+
     private String BestTimeFile = "misc/BestTime.txt";
     private String LastTimeFile = "misc/Timer.txt";
-   
 
     public void act()
     {
-            ScoreAndMisc();
+        ScoreAndMisc();
     }
 
     public WinScreen()
@@ -44,7 +43,6 @@ public class WinScreen extends World
         BestTime besttime = new BestTime(" ");
         loadFileLastTime( (String) LastTimeFile); 
         loadFileBestTime ( (String) BestTimeFile); 
-        
 
         if( LastTimeinSec < BestTimeinSec )
         {
@@ -63,7 +61,7 @@ public class WinScreen extends World
         addObject(besttime, 975,430);
         addObject(new GoToMainMenu(), 600, 530);
     }
-    
+
     public java.util.List<String> loadFileLastTime(String filename) {
         ArrayList<String> fileText = new ArrayList<String>();
         BufferedReader file = null;
@@ -98,7 +96,7 @@ public class WinScreen extends World
 
         return fileText;
     }
-    
+
     public java.util.List<String> loadFileBestTime(String filename) {
         ArrayList<String> fileText = new ArrayList<String>();
         BufferedReader file = null;
@@ -133,7 +131,7 @@ public class WinScreen extends World
 
         return fileText;
     }
-    
+
     public boolean saveFile(String filename, boolean addToExistingFile, String ... fileText) {
         List<String> existingText = loadFile(filename);
         BufferedWriter file = null;
@@ -168,7 +166,7 @@ public class WinScreen extends World
         }
         return true;
     }
-    
+
     public boolean deleteFile(String filename) {
         BufferedWriter file = null;
         try {
@@ -197,7 +195,7 @@ public class WinScreen extends World
         }
         return true;
     }
-    
+
     public java.util.List<String> loadFile(String filename) {
         ArrayList<String> fileText = new ArrayList<String>();
         BufferedReader file = null;

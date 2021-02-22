@@ -10,17 +10,17 @@ public class WalkieTalkie extends GuardiansRoom
     private long LastTime;
     private long LastTimeEX = 01;
     private int DelayEx = 200;
-    
+
     BiggerHint GoToWalkie = new BiggerHint(" ");
     Hint PressToSpeak = new Hint(" ");
     Hint ReadThis = new Hint(" ");
-    
+
     String GoToWalkietxt = "Grab the Walkietalkie \n from the Desk ! ";
     String PressToSpeaktxt = "Press NUM1 to speak";
     String ReadThistxt = " Press NUM2 to make the Chief leave his room" ;
-    
+
     public static GreenfootSound walkietalkie = new GreenfootSound("WalkieTalkie.mp3");
-    
+
     public void act() 
     {
         RunJob();
@@ -30,7 +30,7 @@ public class WalkieTalkie extends GuardiansRoom
     {
         setImage ( "WalkieTalkie.png" );
     }
-    
+
     private void Hints()
     {
         GoToWalkie.setText( GoToWalkietxt );
@@ -42,9 +42,9 @@ public class WalkieTalkie extends GuardiansRoom
     {
         if( System.currentTimeMillis() <  LastTimeEX + DelayEx )  return;
         LastTimeEX = System.currentTimeMillis();
-        
+
         Hints();
-        
+
         if ( DONE == false )
         {
             List <Vent2> Vent22 = getObjectsInRange ( 500, Vent2.class);
@@ -61,7 +61,7 @@ public class WalkieTalkie extends GuardiansRoom
             }
 
             List <Player2> Player22 = getObjectsInRange( 40 ,Player2.class);
-            
+
             if( Player22.size() !=0 )
             {
                 getWorld().removeObject( GoToWalkie);   GoToadded = false;
@@ -79,7 +79,7 @@ public class WalkieTalkie extends GuardiansRoom
                 }
             }
         }
-        
+
         if( System.currentTimeMillis() > LastTime + 500  && DONE == true && NextCPadded == false)
         {
             DONE = true;
@@ -87,7 +87,7 @@ public class WalkieTalkie extends GuardiansRoom
             NextTask();
         }
     }
-    
+
     private void NextTask(){
         getWorld().addObject( new TransparentVentExit(),595,612 );
     }

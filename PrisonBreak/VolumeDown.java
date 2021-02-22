@@ -4,14 +4,17 @@ import java.util.List;
 public class VolumeDown extends SettingMenu
 {
     private int timer = 0;
+
     public VolumeDown()
     {
         setImage("-.png");
     }
+
     public void act() 
     {
         MusicDown();
     } 
+
     public void MusicDown()
     {
         List Music0 = getWorld().getObjects(Music0.class);
@@ -25,7 +28,7 @@ public class VolumeDown extends SettingMenu
         List Music80 = getWorld().getObjects(Music80.class);
         List Music90 = getWorld().getObjects(Music90.class);
         List Music100 = getWorld().getObjects(Music100.class);
-        
+
         if (Greenfoot.mouseClicked(this))
         {
             if(Music100.size() != 0)
@@ -35,9 +38,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music90();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(90);
+                    Level1.backgroundMusic.setVolume(90);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(90);
+                    Level2.backgroundMusic1.setVolume(90);
             }
             if(Music90.size() != 0)
             {
@@ -46,9 +49,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music80();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(80);
+                    Level1.backgroundMusic.setVolume(80);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(80);
+                    Level2.backgroundMusic1.setVolume(80);
             }
             if(Music80.size() != 0)
             {
@@ -57,9 +60,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music70();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(70);
+                    Level1.backgroundMusic.setVolume(70);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(70);
+                    Level2.backgroundMusic1.setVolume(70);
             }
             else if(Music70.size() != 0)
             {
@@ -68,9 +71,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music60();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(60);
+                    Level1.backgroundMusic.setVolume(60);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(60);
+                    Level2.backgroundMusic1.setVolume(60);
             }
             if(Music60.size() != 0)
             {
@@ -79,9 +82,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music50();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(50);
+                    Level1.backgroundMusic.setVolume(50);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(50);
+                    Level2.backgroundMusic1.setVolume(50);
             }
             if(Music50.size() != 0)
             {
@@ -90,9 +93,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music40();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(40);
+                    Level1.backgroundMusic.setVolume(40);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(40);
+                    Level2.backgroundMusic1.setVolume(40);
             }
             else if(Music40.size() != 0)
             {
@@ -101,9 +104,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music30();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(30);
+                    Level1.backgroundMusic.setVolume(30);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(30);
+                    Level2.backgroundMusic1.setVolume(30);
             }
             else if(Music30.size() != 0)
             {
@@ -112,9 +115,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music20();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(20);
+                    Level1.backgroundMusic.setVolume(20);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(20);
+                    Level2.backgroundMusic1.setVolume(20);
             }
             if(Music20.size() != 0)
             {
@@ -123,9 +126,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music10();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(10);
+                    Level1.backgroundMusic.setVolume(10);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(10);
+                    Level2.backgroundMusic1.setVolume(10);
             }
             if(Music10.size() != 0)
             {
@@ -134,9 +137,9 @@ public class VolumeDown extends SettingMenu
                 Settings sound = (Settings)getWorld().getObjects(Settings.class).get(0);
                 sound.soundbar = new Music0();
                 if(getWorld() instanceof Level1)
-                Level1.backgroundMusic.setVolume(0);
+                    Level1.backgroundMusic.setVolume(0);
                 if(getWorld() instanceof Level2)
-                Level2.backgroundMusic1.setVolume(0);
+                    Level2.backgroundMusic1.setVolume(0);
             }
         }
     }

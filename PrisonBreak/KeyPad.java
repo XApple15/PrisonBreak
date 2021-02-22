@@ -8,7 +8,9 @@ public class KeyPad extends Objects
     String GoToExittxt = "Exit the building!";
     String GoToPrisonExittxt = "Go to the Prison exit !";
     String FollowYourMatetxt = "Follow your Ex-cellmate!";
+    String GoToKeyPadtxt = " Go to the KeyPad!";
 
+    Hint GoToKeyPad = new Hint(" ");
     Hint GoToPrisonExit = new Hint(" ");
     Hint PressCtoTypeTheCode = new Hint(" ");
     Hint TypeCode = new Hint(" ");
@@ -29,6 +31,7 @@ public class KeyPad extends Objects
     private boolean exitbuilding = false;
     private boolean gotoprisonexit = false ;
     private boolean followadded = false;
+    private boolean gotokeypad = false;
     public void act()
     {
         Hints();
@@ -43,6 +46,7 @@ public class KeyPad extends Objects
         GoToExit.setText(GoToExittxt);
         GoToPrisonExit.setText( GoToPrisonExittxt);
         FollowYourMate.setText( FollowYourMatetxt);
+        GoToKeyPad.setText( GoToKeyPadtxt);
     }
 
     public void VerifEnchanced()
@@ -56,15 +60,19 @@ public class KeyPad extends Objects
                 getWorld().addObject( FollowYourMate , 1011,680);
                 followadded = true;
             }
-            if( gotoprisonexit == false)
+            if( gotokeypad == false)
             {
-                getWorld().addObject( GoToPrisonExit , 181,620);
-                gotoprisonexit = true;
+                getWorld().addObject( GoToKeyPad , 181,620);
+                gotokeypad = true;
             }
             if( Player2.size() !=0 && ishere == false ) 
             {
-                getWorld().removeObject( GoToPrisonExit);
-
+                getWorld().removeObject( GoToKeyPad);
+                if( presstotype == false )
+                {
+                    getWorld().addObject( PressCtoTypeTheCode , 181, 640);
+                    presstotype = true;
+                }
                 if( Greenfoot.isKeyDown("c") ) 
                 {
                     if( presstotype == true) getWorld().removeObject( PressCtoTypeTheCode);
@@ -106,61 +114,61 @@ public class KeyPad extends Objects
             {
                 if( presstotype == false )
                 {
-                        getWorld().addObject( PressCtoTypeTheCode ,181, 680);
-                        presstotype = true;
-                    }
-
-                    if( Greenfoot.isKeyDown("c") ) 
-                    {
-                        if( presstotype == true) getWorld().removeObject( PressCtoTypeTheCode);
-                        if( typecode == false )
-                        {
-                            getWorld().addObject(TypeCode , 181,640);
-                            typecode = true;
-                        }
-                        KeyPass KeyPass1 = new KeyPass();
-                        Number1 number1 = new Number1();
-                        Number2 number2 = new Number2();
-                        Number3 number3 = new Number3();
-                        Number4 number4 = new Number4();
-                        Number5 number5 = new Number5();
-                        Number6 number6 = new Number6();
-                        Number7 number7 = new Number7();
-                        Number8 number8 = new Number8();
-                        Number9 number9 = new Number9();
-                        Number0 number0 = new Number0();
-                        DeleteNumber deletenumber = new DeleteNumber();
-                        getWorld().addObject( KeyPass1, 500,275);
-                        getWorld().addObject( number1, 460,230);
-                        getWorld().addObject( number2, 500,230);
-                        getWorld().addObject( number3, 540,230);
-                        getWorld().addObject( number4, 460,275);
-                        getWorld().addObject( number5, 500,275);
-                        getWorld().addObject( number6, 540,275);
-                        getWorld().addObject( number7, 460,320);
-                        getWorld().addObject( number8, 500,320);
-                        getWorld().addObject( number9, 540,320);
-                        getWorld().addObject( number0, 500,365);
-                        getWorld().addObject( deletenumber, 540,365);
-                        ishere= true;
-                    }
+                    getWorld().addObject( PressCtoTypeTheCode ,181, 680);
+                    presstotype = true;
                 }
-            }
-        }
 
-        public void CloseHack()
-        {
-            List <Player1> Player2 = getObjectsInRange(120 , Player1.class);
-            if(Player2.size() != 0 && Greenfoot.isKeyDown("e"))
-            {
-                if( exitbuilding == false )
+                if( Greenfoot.isKeyDown("c") ) 
                 {
-                    getWorld().addObject( GoToExit , 181,680);
-                    exitbuilding = true ;
+                    if( presstotype == true) getWorld().removeObject( PressCtoTypeTheCode);
+                    if( typecode == false )
+                    {
+                        getWorld().addObject(TypeCode , 181,640);
+                        typecode = true;
+                    }
+                    KeyPass KeyPass1 = new KeyPass();
+                    Number1 number1 = new Number1();
+                    Number2 number2 = new Number2();
+                    Number3 number3 = new Number3();
+                    Number4 number4 = new Number4();
+                    Number5 number5 = new Number5();
+                    Number6 number6 = new Number6();
+                    Number7 number7 = new Number7();
+                    Number8 number8 = new Number8();
+                    Number9 number9 = new Number9();
+                    Number0 number0 = new Number0();
+                    DeleteNumber deletenumber = new DeleteNumber();
+                    getWorld().addObject( KeyPass1, 500,275);
+                    getWorld().addObject( number1, 460,230);
+                    getWorld().addObject( number2, 500,230);
+                    getWorld().addObject( number3, 540,230);
+                    getWorld().addObject( number4, 460,275);
+                    getWorld().addObject( number5, 500,275);
+                    getWorld().addObject( number6, 540,275);
+                    getWorld().addObject( number7, 460,320);
+                    getWorld().addObject( number8, 500,320);
+                    getWorld().addObject( number9, 540,320);
+                    getWorld().addObject( number0, 500,365);
+                    getWorld().addObject( deletenumber, 540,365);
+                    ishere= true;
                 }
-                getWorld().removeObject(TypeCode);
-                getWorld().removeObjects(getWorld().getObjects(KeyPass.class));
-                ishere = false;
             }
         }
     }
+
+    public void CloseHack()
+    {
+        List <Player1> Player2 = getObjectsInRange(120 , Player1.class);
+        if(Player2.size() != 0 && Greenfoot.isKeyDown("e"))
+        {
+            if( exitbuilding == false )
+            {
+                getWorld().addObject( GoToExit , 181,680);
+                exitbuilding = true ;
+            }
+            getWorld().removeObject(TypeCode);
+            getWorld().removeObjects(getWorld().getObjects(KeyPass.class));
+            ishere = false;
+        }
+    }
+}

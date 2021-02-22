@@ -2,15 +2,17 @@ import greenfoot.*;
 import java.util.List;
 public class Cop1 extends NPC
 {
-    private int movingCounter = 0;
-    boolean n = false;
-    int timer = 0;
-    boolean isSet= false;
+    private int movingCounter = 0;   
+    int timer = 0;    
     private long LastTime = 01;
     private int DelayEx = 200;
+    
+    boolean n = false;
+    boolean isSet= false;
     boolean delay = false;
     boolean lastTime = false;
-    public void act() {
+    public void act() 
+    {
         PlayerNearby();
         MovingCycle();
         OpenDoor1();

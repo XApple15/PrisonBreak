@@ -34,6 +34,7 @@ public class Player1 extends Players
             }
         }
     }
+    
     public void Movement()
     {
         List setting = getWorld().getObjects(SettingMenu.class);

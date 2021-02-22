@@ -12,7 +12,7 @@ public class BestTime extends Actor
     {
         setText(" " + text);
     }
-     
+
     public void setText(String text)
     {
         GreenfootImage textImg = new GreenfootImage( text, 33, Color.BLACK, new Color(0, 0, 0, 0));

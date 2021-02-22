@@ -5,6 +5,7 @@ public class text19 extends HowToPlayText
     {
         setImage("HowToPlay/19.png");
     }
+
     public void act() 
     {
         if(Greenfoot.mouseClicked(this))

@@ -59,7 +59,6 @@ public class Level1 extends World
         addObject( new CellDoor() ,874 ,289 );
         addObject( new CellDoor() ,874 ,459 );
 
-        
         addObject(new Desk(), 177, 455);
         addObject( new DeskStatic(), 678,557);
 

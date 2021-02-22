@@ -10,17 +10,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-
 public class Timer extends Actor
 {
     private boolean isFirstDeleted = false;
-    
+
     private long StartTime = System.currentTimeMillis();
     private long currentTime,  durationSeconds;
     private long  Delay = 1000;
     private long StartTimeDelay = 01;
     int z;
-    
+
     String LastTimeFromFile ;
     private String filename = "misc/Timer.txt";
 
@@ -43,7 +42,7 @@ public class Timer extends Actor
         StartTimeDelay = System.currentTimeMillis(); 
         List setting = getWorld().getObjects(SettingMenu.class);
         if(setting.size() != 0) return;
-        
+
         //if( isFirstDeleted == true)  getWorld().removeObject(Timerr);
 
         loadFile( (String) filename); // incarca fisierul

@@ -3,6 +3,7 @@ import java.util.List;
 public class Prisoneer2 extends Prisoneer
 {
     private int movingCounter = 0;
+
     public Prisoneer2()
     {
         GreenfootImage P2 = new GreenfootImage("P2.png");
@@ -10,10 +11,12 @@ public class Prisoneer2 extends Prisoneer
         changeSize(4,4);
         ImageSet();
     }
+
     public void act() 
     {
         movePrisoner2();
     }    
+
     public void movePrisoner2()
     {
         List setting = getWorld().getObjects(SettingMenu.class);

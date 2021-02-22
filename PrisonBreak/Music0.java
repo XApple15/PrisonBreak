@@ -6,6 +6,7 @@ public class Music0 extends SettingMenu
     {
         setImage("0.png");
     }
+
     public void act() 
     {
     }    
